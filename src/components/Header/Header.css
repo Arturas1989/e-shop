@@ -1,0 +1,77 @@
+@import '../../styles/variables.css';
+
+header{
+  width: 100%;
+  min-height: var(--min-header-height);
+  
+}
+
+.left-nav{
+  position: relative;
+}
+
+.left-nav img {
+  width: var(--min-icon-height);
+}
+
+.navbar .bi{
+  font-size: var(--min-icon-height);
+}
+
+.navbar .bi:hover{
+  cursor: pointer;
+}
+
+.left-nav > .bi-list {
+  display: none;
+}
+
+.left-nav > a {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navbar, .left-nav > a, .right-nav, .middle-nav, .middle-nav > div{
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.middle-nav > div{
+  min-height: var(--min-icon-height);
+}
+
+.middle-nav a {
+  padding: 1rem 0.5rem;
+}
+
+.middle-nav > div:hover{
+  background-color: var(--navbar-color);
+  border-radius: 0.4rem;
+}
+
+.navbar-container{
+  min-width: var(--min-app-width);
+  margin: calc((var(--min-header-height) - var(--min-icon-height)) / 2) var(--app-side-margin);
+  min-height: 100%;
+  border-bottom: 1px solid var(--navbar-color);
+}
+
+.navbar{
+  margin: 10px calc(50% - var(--navbar-width) / 2 );
+  justify-content: space-between;
+  align-self: center;
+  justify-self: center;
+}
+
+@media (max-width: 768px){
+  .left-nav > .bi-list{
+    display: block;
+  }
+
+  .left-nav > a{
+    display: none;
+  }
+}
