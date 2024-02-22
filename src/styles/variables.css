@@ -1,0 +1,11 @@
+:root{
+  --navbar-width: 95%;
+  --min-header-height: 50px;
+  --min-icon-height: 1.5rem;
+  --navbar-color: #E8E8E8;
+  --min-app-width: 80%;
+  --app-side-margin: calc((100% - var(--min-app-width)) / 2);
+  --navbar-border: 1.5px solid var(--navbar-color);
+  --navbar-top-bottom-margin: 10px;
+  --navbar-side-margin: 20px;
+}

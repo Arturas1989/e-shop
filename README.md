@@ -23,7 +23,6 @@ Technology stack: <br/><br/>
 ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white)
 ![React Router DOM](https://img.shields.io/badge/-React_Router_DOM-CA4245?logo=react-router&logoColor=white)
 ![Redux](https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white)
-![Material-UI](https://img.shields.io/badge/-Material--UI-0081CB?color=0081CB)
 ![Jest](https://img.shields.io/badge/-Jest-C21325?logo=jest&logoColor=white)
 ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=firebase&logoColor=white)
 

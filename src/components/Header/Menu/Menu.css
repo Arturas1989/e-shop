@@ -1,0 +1,45 @@
+@import '../../../styles/variables.css';
+
+.menu{
+  width: var(--min-app-width);
+  margin: 0 calc(50% - var(--min-app-width)/2);
+  box-shadow: 0 0 3px grey;
+}
+
+
+.menu > nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu a{
+  padding: 5px 10px;
+  width: 100%;
+  border-bottom: var(--navbar-border);
+  font-weight: bold;
+  
+}
+
+.menu a:hover {
+  background-color: var(--navbar-color);
+  color: green;
+  
+}
+
+header .notVisible{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
+header .isVisible{
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+@media (min-width: 768px){
+  header .isVisible{
+    display: none;
+  }
+}

@@ -1,0 +1,99 @@
+@import '../../styles/variables.css';
+
+header * {
+  text-transform: uppercase;
+}
+
+header{
+  width: 100%;
+  min-height: var(--min-header-height);
+}
+
+header .hidden{
+  display: none;
+}
+
+
+
+.left-nav{
+  position: relative;
+}
+
+.left-nav img {
+  width: var(--min-icon-height);
+}
+
+.navbar .bi{
+  font-size: var(--min-icon-height);
+}
+
+.navbar .bi:hover{
+  cursor: pointer;
+}
+
+
+
+.left-nav > a > p {
+  font-size: var(--min-icon-height);
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.navbar, .left-nav, .left-nav > a, .right-nav, .middle-nav, .middle-nav > div{
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.middle-nav > div{
+  min-height: var(--min-icon-height);
+}
+
+.middle-nav a {
+  padding: 1rem 0.5rem;
+}
+
+.middle-nav > div:hover{
+  background-color: var(--navbar-color);
+  border-radius: 0.4rem;
+}
+
+.navbar-container{
+  width: var(--min-app-width);
+  margin: calc((var(--min-header-height) - var(--min-icon-height)) / 2) var(--app-side-margin);
+  min-height: 100%;
+  border-bottom: var(--navbar-border);
+}
+
+.navbar{
+  margin: var(--navbar-top-bottom-margin) var(--navbar-side-margin);
+  justify-content: space-between;
+  align-self: center;
+  justify-self: center;
+}
+
+@media (max-width: 768px){
+  .left-nav{
+    width: 100%;
+    justify-content: center;
+    border-bottom: var(--navbar-border);
+    
+  }
+
+  .navbar-container{
+    border: none;
+  }
+
+  .navbar{
+    width: 100%;
+    margin: var(--navbar-top-bottom-margin) 0;
+  }
+
+  .left-nav > a, .middle-nav, .right-nav{
+    display: none;
+  }
+
+  
+}
