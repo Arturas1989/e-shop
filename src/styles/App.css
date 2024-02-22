@@ -1,0 +1,9 @@
+@import './variables.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+  color: black;
+}
