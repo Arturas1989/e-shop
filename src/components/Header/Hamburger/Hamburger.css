@@ -1,0 +1,23 @@
+.hamburger {
+  display: none;
+}
+
+header .hidden{
+  display: none;
+}
+
+@media (max-width: 768px){
+  .hamburger{
+    display: flex;
+  }
+
+  .hamburger > div.visible {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    margin: var(--navbar-top-bottom-margin) 0;
+    font-weight: bold;
+  }
+}

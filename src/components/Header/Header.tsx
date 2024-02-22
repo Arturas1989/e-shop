@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/e-shop-logo.png';
 import './Header.css';
 import { useState } from 'react';
-import { Menu } from './Menu/Menu';
+import { Menu, Hamburger, CloseMenu } from '../../components';
 
 export const Header = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -11,11 +11,14 @@ export const Header = () => {
       <div className="navbar-container">
         <nav className="navbar">
           <div className="left-nav">
-            <i className="bi bi-list" onClick={() => setIsMenuVisible((prev) => !prev)}></i>
-            {isMenuVisible && <Menu />}
+            <div className="hamburger"  onClick={() => setIsMenuVisible((prev) => !prev)}>
+              <CloseMenu isVisible={isMenuVisible} /> 
+              <Hamburger isVisible={!isMenuVisible} />
+            </div>
+            
             <Link to='/'>
               <img src={Logo} alt="e-shop-logo" />
-              <p>shopify</p>
+              <p>e-shop</p>
             </Link>
           </div>
           <div className="middle-nav">
@@ -33,6 +36,7 @@ export const Header = () => {
           </div>
         </nav>
       </div>
+      <Menu isVisible={isMenuVisible}/>
     </header>
   )
 };
