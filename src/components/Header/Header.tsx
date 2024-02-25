@@ -7,7 +7,7 @@ import { Menu, Hamburger, CloseMenu } from '../../components';
 export const Header = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   return (
-    <header>
+    <header id='header'>
       <div className="navbar-container">
         <nav className="navbar">
           <div className="left-nav">

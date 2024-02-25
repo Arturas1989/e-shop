@@ -4,13 +4,14 @@ header * {
   text-transform: uppercase;
 }
 
-header{
+#header{
+  margin: 0;
   width: 100%;
   position: relative;
   min-height: var(--min-header-height);
 }
 
-header .hidden{
+#header .hidden{
   display: none;
 }
 
