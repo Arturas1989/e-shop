@@ -7,3 +7,13 @@
   text-decoration: none;
   color: black;
 }
+
+.App{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.App > * {
+  margin: 0 var(--app-side-inner-margin);
+}
