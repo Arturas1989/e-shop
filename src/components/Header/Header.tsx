@@ -11,7 +11,7 @@ export const Header = () => {
       <div className="navbar-container">
         <nav className="navbar">
           <div className="left-nav">
-            <div className="hamburger"  onClick={() => setIsMenuVisible((prev) => !prev)}>
+            <div data-testid="hamburger" className="hamburger" onClick={() => setIsMenuVisible((prev) => !prev)}>
               <CloseMenu isVisible={isMenuVisible} /> 
               <Hamburger isVisible={!isMenuVisible} />
             </div>
