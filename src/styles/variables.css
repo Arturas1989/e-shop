@@ -8,4 +8,6 @@
   --navbar-border: 1.5px solid var(--navbar-color);
   --navbar-top-bottom-margin: 10px;
   --navbar-side-margin: 20px;
+  --app-side-inner-margin: calc(var(--app-side-margin) + var(--navbar-side-margin));
+  --footer-color: #6b7280;
 }
