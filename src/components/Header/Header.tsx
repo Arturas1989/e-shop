@@ -1,6 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/e-shop-logo.png';
-import './Header.css';
 import { useState } from 'react';
 import { Menu, Hamburger, CloseMenu } from '../../components';
 

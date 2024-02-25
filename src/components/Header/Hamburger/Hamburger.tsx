@@ -1,5 +1,4 @@
 import { MenuProps } from '../../../types';
-import './Hamburger.css';
 
 export const Hamburger = ({ isVisible }: MenuProps) => {
   return (

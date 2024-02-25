@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@import './variables.css';
+@import './layout.css';
+@import 'reset.css';
+
+@import '../components/Footer/Footer.css';
+@import '../components/Header/Header.css';
+@import '../components/Header/Hamburger/Hamburger.css';
+@import '../components/Header/Menu/Menu.css';
+@import '../components/PrimaryButton/PrimaryButton.css';
+
+
+@import '../pages/PageNotFound/PageNotFound.css';
+
+@import 'bootstrap-icons/font/bootstrap-icons.css';
