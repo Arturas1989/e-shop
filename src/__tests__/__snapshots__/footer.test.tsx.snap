@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`footer components renders renders correctly 1`] = `
+<footer
+  id="footer"
+>
+  <div
+    className="footer-bar"
+  >
+    <div
+      className="copyright"
+    >
+      © 2024 e-shop. All rights reserved
+    </div>
+    <div
+      className="socials"
+    >
+      <a
+        href="/"
+        rel="noreferer"
+        target="_blank"
+      >
+        <i
+          className="bi bi-instagram"
+        />
+      </a>
+      <a
+        href="/"
+        rel="noreferer"
+        target="_blank"
+      >
+        <i
+          className="bi bi-twitter"
+        />
+      </a>
+      <a
+        href="/"
+        rel="noreferer"
+        target="_blank"
+      >
+        <i
+          className="bi bi-github"
+        />
+      </a>
+    </div>
+  </div>
+</footer>
+`;
