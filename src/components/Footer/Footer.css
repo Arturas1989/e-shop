@@ -1,0 +1,30 @@
+@import '../../styles/variables.css';
+
+#footer{
+  margin: 0;
+  margin-top: 200px;
+  width: 100%;
+  border-top: var(--navbar-border);
+}
+
+.footer-bar{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 var(--app-side-inner-margin);
+  padding: 20px 0;
+}
+
+.footer-bar * {
+  color: var(--footer-color);
+  font-size: 1.1rem;
+}
+
+.socials{
+  display: flex;
+  gap: 30px;
+}
+
+.socials *:hover{
+  cursor: pointer;
+}
