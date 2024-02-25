@@ -4,3 +4,5 @@ export { Hamburger } from './Header/Hamburger/Hamburger';
 export { CloseMenu } from './Header/CloseMenu';
 
 export { Footer } from './Footer/Footer';
+
+export { PrimaryButton } from './PrimaryButton/PrimaryButton';
