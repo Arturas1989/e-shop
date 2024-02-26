@@ -22,6 +22,7 @@ code {
 @import '../components/Header/Menu/Menu.css';
 @import '../components/PrimaryButton/PrimaryButton.css';
 
+@import '../pages/Home/components/Hero/Hero.css';
 
 @import '../pages/PageNotFound/PageNotFound.css';
 
