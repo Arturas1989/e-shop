@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import { PageNotFound } from '../pages';
+import { PageNotFound } from '../../pages';
 
 describe('footer components renders', () => {
   test('renders correctly', () => {

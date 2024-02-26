@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import { fireEvent, screen, render } from '@testing-library/react';
-import { Header } from '../components';
+import { Header } from '../../components';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('header components renders', () => {

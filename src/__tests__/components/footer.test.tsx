@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import { Footer } from '../components';
+import { Footer } from '../../components';
 
 describe('footer components renders', () => {
   test('renders correctly', () => {
