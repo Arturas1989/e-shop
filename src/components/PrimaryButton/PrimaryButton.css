@@ -1,3 +1,7 @@
+.primary-button{
+  display: flex;
+}
+
 .primary-button > a{
   background: rgb(var(--button-color-rgb));
   padding: 10px;
