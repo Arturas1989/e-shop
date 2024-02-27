@@ -36,7 +36,7 @@ header .isVisible{
   transition: opacity 1s linear;
 }
 
-@media (min-width: 768px){
+@media screen and (max-width: 768px){
   header .isVisible{
     display: none;
   }
