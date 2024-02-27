@@ -16,14 +16,23 @@ code {
 @import './layout.css';
 @import 'reset.css';
 
+/* general component */
 @import '../components/Footer/Footer.css';
 @import '../components/Header/Header.css';
 @import '../components/Header/Hamburger/Hamburger.css';
 @import '../components/Header/Menu/Menu.css';
 @import '../components/PrimaryButton/PrimaryButton.css';
+@import '../components/ProductCard/ProductCard.css';
+@import '../components/ProductCard/Rating/Rating.css';
+@import '../components/ProductCard/BestSeller/BestSeller.css';
 
+/* Home components */
 @import '../pages/Home/components/Hero/Hero.css';
+@import '../pages/Home/components/FeaturedProducts/FeaturedProducts.css';
 
+/* Pages */
 @import '../pages/PageNotFound/PageNotFound.css';
+@import '../pages/Home/Home.css';
+
 
 @import 'bootstrap-icons/font/bootstrap-icons.css';
