@@ -11,4 +11,15 @@
   --app-side-inner-margin: calc(var(--app-side-margin) + var(--navbar-side-margin));
   --footer-color: #6b7280;
   --button-color-rgb: 0, 147, 213;
+  --featured-product-gap: 30px;
+  --featured-product-columns: 3;
+  --featured-remaining-width: calc(100% - var(--featured-product-gap) * (var(--featured-product-columns) - 1));
+  --featured-product-width: calc(var(--featured-remaining-width) / var(--featured-product-columns));
+  --featured-product-border-radius: 10px;
+}
+
+@media screen and (max-width: 1100px){
+  :root{
+    --featured-product-columns: 2;
+  }
 }

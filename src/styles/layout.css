@@ -8,7 +8,7 @@
   margin: 0 var(--app-side-inner-margin);
 }
 
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
   .App > * {
     margin: 0 var(--app-side-margin);
   }

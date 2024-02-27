@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`footer components renders renders correctly 1`] = `
+<div
+  className="product-card"
+>
+  <div
+    className="best-seller"
+  >
+    best seller
+  </div>
+  <img
+    alt="headphones"
+    src="/assets/undefined.png"
+  />
+  <div
+    className="bottom"
+  >
+    <h1>
+      headphones
+    </h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam magni sunt quidem impedit voluptate praesentium maiores? Recusandae, sequi, reiciendis iste in dolorum molestiae odio exercitationem autem nulla ad maiores repellendus.
+    </p>
+    <div
+      className="rating"
+    >
+      <i
+        className="bi bi-star-fill"
+      />
+      <i
+        className="bi bi-star-fill"
+      />
+      <i
+        className="bi bi-star-fill"
+      />
+      <i
+        className="bi bi-star-fill"
+      />
+      <i
+        className="bi bi-star-fill"
+      />
+    </div>
+    <div
+      className="price-row"
+    >
+      <span>
+        $99
+      </span>
+      <button>
+        <span>
+          Add to cart
+        </span>
+        <i
+          className="bi bi-plus"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
