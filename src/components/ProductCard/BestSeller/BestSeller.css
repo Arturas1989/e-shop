@@ -1,0 +1,8 @@
+.best-seller{
+  background-color: rgb(255, 251, 235);
+  color: rgb(246, 167, 29);
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: var(--featured-product-border-radius);
+  align-self: flex-start;
+}
