@@ -6,3 +6,7 @@
   border-radius: var(--featured-product-border-radius);
   align-self: flex-start;
 }
+
+.not-visible{
+  visibility: hidden;
+}
