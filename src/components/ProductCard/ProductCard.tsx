@@ -1,26 +1,25 @@
 import { BestSeller } from './BestSeller/BestSeller';
 import { Rating } from './Rating/Rating';
+import type { Product } from '../../types';
 
 type ProductCardProps = {
-  name?: string;
+  product: Product;
 };
 
-export const ProductCard = ({ name }: ProductCardProps) => {
+export const ProductCard = ({ product }: ProductCardProps) => {
+  const {name, description, price, best_seller, rating, img_name} = product;
   return (
     <div className="product-card">
-      <BestSeller isBestSeller={true} />
-      <img src={`/assets/${name}.png`} alt="headphones" />
+      <BestSeller isBestSeller={best_seller} />
+      <img src={`/assets/${img_name}`} alt="headphones" />
       <div className="bottom">
-        <h1>headphones</h1>
+        <h1>{name}</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          magni sunt quidem impedit voluptate praesentium maiores? Recusandae,
-          sequi, reiciendis iste in dolorum molestiae odio exercitationem autem
-          nulla ad maiores repellendus.
+          {description}
         </p>
-        <Rating stars={5} />
+        <Rating stars={rating} />
         <div className="price-row">
-          <span>$99</span>
+          <span>${price}</span>
           <button>
             <span>Add to cart</span>
             <i className="bi bi-plus"></i>
