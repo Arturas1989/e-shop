@@ -8,7 +8,10 @@ export const useData = <T extends DocumentData>(colName: Collection) => {
   useEffect(() => {
     const colRef = collection(db, 'products')
     getDocs(colRef).then(fireData => {
+      const data = fireData.docs.map(doc => doc.data() as T);
+      console.log(data)
       setColData(fireData.docs.map(doc => doc.data() as T));
+      return;
     })
   }, [])
   return colData;
