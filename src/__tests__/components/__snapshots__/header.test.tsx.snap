@@ -86,6 +86,15 @@ exports[`header components renders renders correctly 1`] = `
         />
         <i
           className="bi bi-cart-fill"
+        >
+          <div
+            className="cart-items"
+          >
+            0
+          </div>
+        </i>
+        <i
+          className="bi bi-person-circle"
         />
       </div>
     </nav>

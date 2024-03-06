@@ -60,6 +60,29 @@ header * {
   border-radius: 0.4rem;
 }
 
+.right-nav > i {
+  color: rgba(0,0,0,0.6);
+}
+
+.bi-cart-fill{
+  position: relative;
+}
+
+.bi-cart-fill > .cart-items{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(244, 63, 94);
+  color: white;
+  font-style: normal;
+  top: -2px;
+  right: -2px;
+  width: 60%;
+  font-size: 60%;
+  border-radius: 10px;
+}
+
 .navbar-container{
   width: var(--min-app-width);
   margin: calc((var(--min-header-height) - var(--min-icon-height)) / 2) var(--app-side-margin);

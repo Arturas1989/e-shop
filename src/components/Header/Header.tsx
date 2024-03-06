@@ -31,7 +31,10 @@ export const Header = () => {
           <div className="right-nav">
             <i className="bi bi-gear-wide-connected"></i>
             <i className="bi bi-search"></i>
-            <i className="bi bi-cart-fill"></i>
+            <i className="bi bi-cart-fill">
+              <div className="cart-items">0</div>
+            </i>
+            <i className="bi bi-person-circle"></i>
           </div>
         </nav>
       </div>
