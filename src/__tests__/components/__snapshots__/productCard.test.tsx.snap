@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`footer components renders renders correctly 1`] = `
+exports[`ProductCard components renders renders correctly 1`] = `
 <div
   className="product-card"
 >
   <div
-    className="best-seller"
+    className="best-seller not-visible"
   >
     best seller
   </div>
   <img
     alt="headphones"
-    src="/assets/undefined.png"
+    src="/assets/headphones.jpg"
   />
   <div
     className="bottom"
@@ -20,7 +20,7 @@ exports[`footer components renders renders correctly 1`] = `
       headphones
     </h1>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam magni sunt quidem impedit voluptate praesentium maiores? Recusandae, sequi, reiciendis iste in dolorum molestiae odio exercitationem autem nulla ad maiores repellendus.
+      this is headphones
     </p>
     <div
       className="rating"
@@ -45,7 +45,8 @@ exports[`footer components renders renders correctly 1`] = `
       className="price-row"
     >
       <span>
-        $99
+        $
+        99
       </span>
       <button>
         <span>

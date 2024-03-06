@@ -1,19 +1,15 @@
-import { ProductCard } from "../../../../components/ProductCard/ProductCard";
+import { Products } from '../../../../components/Products/Products';
+import { useData } from '../../../../hooks/useData';
+import { Product } from '../../../../types';
 
-type FeaturedProductsProps = {
-  name?: string;
-};
+export const FeaturedProducts = () => {
+  
+  const products = useData<Product>('products');
 
-export const FeaturedProducts = ({ name }: FeaturedProductsProps) => {
   return (
-
     <section className="feature">
       <h2>Featured products</h2>
-      <div className="products">
-        <ProductCard name="headphones" />
-        <ProductCard name="printer" />
-        <ProductCard name="laptop" />
-      </div>
+      <Products products={products}/>
     </section>
-  )
+  );
 };

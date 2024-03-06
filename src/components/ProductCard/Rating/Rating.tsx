@@ -1,5 +1,7 @@
+import { RatingNum } from "../../../types";
+
 type RatingProps = {
-  stars: 0 | 1 | 2 | 3 | 4 | 5;
+  stars: RatingNum;
 };
 
 export const Rating = ({ stars }: RatingProps) => {

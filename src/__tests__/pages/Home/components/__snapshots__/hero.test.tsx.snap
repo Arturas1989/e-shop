@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`footer components renders renders correctly 1`] = `
+exports[`hero components renders renders correctly 1`] = `
 <section
   className="hero"
 >

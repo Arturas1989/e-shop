@@ -1,13 +1,13 @@
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import { Hero } from '../../../../pages/Home/components/Hero/Hero';
+import { FeaturedProducts } from '../../../../pages/Home';
 
-describe('hero components renders', () => {
+describe('FeaturedProducts components renders', () => {
   test('renders correctly', () => {
     const tree = renderer
       .create(
         <BrowserRouter>
-          <Hero />
+          <FeaturedProducts />
         </BrowserRouter>
       )
       .toJSON();

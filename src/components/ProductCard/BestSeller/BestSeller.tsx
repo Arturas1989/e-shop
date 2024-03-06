@@ -4,6 +4,6 @@ type BestSellerProps = {
 
 export const BestSeller = ({ isBestSeller }: BestSellerProps) => {
   return (
-    isBestSeller ? <div className="best-seller">best seller</div> : null
+    <div className={isBestSeller ? 'best-seller' : 'best-seller not-visible'}>best seller</div>
   )
 };
