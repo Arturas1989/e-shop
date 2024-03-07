@@ -5,8 +5,9 @@ import { Menu, Hamburger, CloseMenu } from '../../components';
 
 export const Header = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
   return (
-    <header id='header'>
+    <header data-testId="header" id='header' className={`${!isSearchBarVisible ? 'search-not-visible' : ''}`}>
       <div className="navbar-container">
         <nav className="navbar">
           <div className="left-nav">
@@ -30,7 +31,7 @@ export const Header = () => {
           </div>
           <div className="right-nav">
             <i className="bi bi-gear-wide-connected"></i>
-            <i className="bi bi-search"></i>
+            <i data-testId="search-icon" className="bi bi-search" onClick={() => setIsSearchBarVisible(prev => !prev)}></i>
             <i className="bi bi-cart-fill">
               <div className="cart-items">0</div>
             </i>
