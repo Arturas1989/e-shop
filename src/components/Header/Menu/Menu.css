@@ -35,3 +35,9 @@ header .isVisible{
   opacity: 1;
   transition: opacity 1s linear;
 }
+
+@media screen and (min-width: 768px) {
+  header .isVisible{
+    display: none;
+  }
+}
