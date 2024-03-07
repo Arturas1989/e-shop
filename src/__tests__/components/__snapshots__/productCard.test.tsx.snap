@@ -48,7 +48,9 @@ exports[`ProductCard components renders renders correctly 1`] = `
         $
         99
       </span>
-      <button>
+      <button
+        className="secondary-button"
+      >
         <span>
           Add to cart
         </span>
