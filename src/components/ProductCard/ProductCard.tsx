@@ -1,5 +1,4 @@
-import { BestSeller } from './BestSeller/BestSeller';
-import { Rating } from './Rating/Rating';
+import { SecondaryButton, Rating, BestSeller } from '../../components';
 import type { Product } from '../../types';
 
 type ProductCardProps = {
@@ -20,10 +19,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <Rating stars={rating} />
         <div className="price-row">
           <span>${price}</span>
-          <button>
+          <SecondaryButton>
             <span>Add to cart</span>
             <i className="bi bi-plus"></i>
-          </button>
+          </SecondaryButton>
         </div>
       </div>
     </div>

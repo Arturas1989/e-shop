@@ -21,7 +21,13 @@ code {
 @import '../components/Header/Header.css';
 @import '../components/Header/Hamburger/Hamburger.css';
 @import '../components/Header/Menu/Menu.css';
-@import '../components/PrimaryButton/PrimaryButton.css';
+@import '../components/SearchBar/SearchBar.css';
+@import '../components/SearchBar/InputBar.css';
+
+/* buttons */
+@import '../components/Buttons/PrimaryButton/PrimaryButton.css';
+@import '../components/Buttons/SecondaryButton/SecondaryButton.css';
+
 @import '../components/ProductCard/ProductCard.css';
 @import '../components/ProductCard/Rating/Rating.css';
 @import '../components/ProductCard/BestSeller/BestSeller.css';

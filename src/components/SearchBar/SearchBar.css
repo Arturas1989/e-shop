@@ -1,0 +1,21 @@
+.search-bar{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.search-bar * {
+  border-radius: 10px;
+}
+
+.search-bar > .bi-search{
+  position: absolute;
+  left: 10px;
+  transform:translateY(38%);
+}
+
+.search-not-visible + .search-bar {
+  display: none;
+}
