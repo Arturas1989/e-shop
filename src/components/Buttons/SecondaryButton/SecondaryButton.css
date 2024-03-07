@@ -1,0 +1,14 @@
+.secondary-button{
+  padding: 10px;
+  background-color: rgb(29, 78, 216);
+  border-radius: 10px;
+}
+
+.secondary-button:hover {
+  cursor: pointer;
+  background-color: rgba(29, 78, 216,0.8);
+}
+
+.secondary-button > * {
+  color: white;
+}
