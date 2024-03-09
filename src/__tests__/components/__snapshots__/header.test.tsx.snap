@@ -3,7 +3,7 @@
 exports[`header components renders renders correctly 1`] = `
 <header
   className="search-not-visible"
-  data-testId="header"
+  data-testid="header"
   id="header"
 >
   <div
@@ -85,7 +85,7 @@ exports[`header components renders renders correctly 1`] = `
         />
         <i
           className="bi bi-search"
-          data-testId="search-icon"
+          data-testid="search-icon"
           onClick={[Function]}
         />
         <i
