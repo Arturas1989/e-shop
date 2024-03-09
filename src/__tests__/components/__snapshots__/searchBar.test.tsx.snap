@@ -3,7 +3,7 @@
 exports[`test description renders correctly 1`] = `
 <div
   className="search-bar"
-  data-testId="search-bar"
+  data-testid="search-bar"
 >
   <i
     className="bi bi-search"

@@ -6,7 +6,7 @@ type SearchBarProps = {
 
 export const SearchBar = ({ name }: SearchBarProps) => {
   return (
-    <div data-testId='search-bar' className="search-bar">
+    <div data-testid='search-bar' className="search-bar">
       <i className="bi bi-search"></i>
       <InputBar type="text" placeholder="Search" />
       <SecondaryButton>
