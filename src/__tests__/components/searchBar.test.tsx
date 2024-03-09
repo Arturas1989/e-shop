@@ -14,7 +14,7 @@ describe('test description', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('search bar visible class changes correctly in the header', () => {
+  test('search bar visible class changes correctly in the header by clicking header search icon', () => {
     render(
       <BrowserRouter>
         <Header />
@@ -25,10 +25,29 @@ describe('test description', () => {
 
     expect(header).toHaveClass('search-not-visible');
 
-    const searchIcon = screen.getByTestId('search-icon');
-    expect(searchIcon).toBeInTheDocument();
+    const headerSearchIcon = screen.getByTestId('search-icon');
+    expect(headerSearchIcon).toBeInTheDocument();
 
-    fireEvent.click(searchIcon);
+    fireEvent.click(headerSearchIcon);
+    expect(header).not.toHaveClass('search-not-visible');
+    
+  });
+
+  test('search bar visible class changes correctly in the header by clicking menu search icon', () => {
+    render(
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
+    );
+    const header = screen.getByTestId('header');
+    expect(header).toBeInTheDocument();
+
+    expect(header).toHaveClass('search-not-visible');
+
+    const menuSearchIcon = screen.getByTestId('search-icon2');
+    expect(menuSearchIcon).toBeInTheDocument();
+
+    fireEvent.click(menuSearchIcon);
     expect(header).not.toHaveClass('search-not-visible');
     
   });

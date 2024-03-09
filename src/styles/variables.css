@@ -16,10 +16,13 @@
   --featured-remaining-width: calc(100% - var(--featured-product-gap) * (var(--featured-product-columns) - 1));
   --featured-product-width: calc(var(--featured-remaining-width) / var(--featured-product-columns));
   --featured-product-border-radius: 10px;
+  --layout-width: calc(100% - 2 * var(--app-side-inner-margin));
 }
 
 @media screen and (max-width: 1100px){
   :root{
     --featured-product-columns: 2;
+    --layout-width: calc(100% - 2 * var(--app-side-margin));
   }
 }
+

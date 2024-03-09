@@ -1,24 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test description renders correctly 1`] = `
-<div
-  className="search-bar"
-  data-testid="search-bar"
+<section
+  className="search"
 >
-  <i
-    className="bi bi-search"
-  />
-  <input
-    className="input-bar"
-    placeholder="Search"
-    type="text"
-  />
-  <button
-    className="secondary-button"
+  <div
+    className="search-bar"
+    data-testid="search-bar"
   >
     <i
       className="bi bi-search"
     />
-  </button>
-</div>
+    <input
+      className="input-bar"
+      placeholder="Search"
+      type="text"
+    />
+    <button
+      className="secondary-button"
+    >
+      <i
+        className="bi bi-search"
+      />
+    </button>
+  </div>
+</section>
 `;

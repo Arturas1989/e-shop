@@ -10,15 +10,15 @@
   flex-direction: column;
 }
 
-.menu a{
+.menu > nav > *{
   padding: 5px 10px;
   width: 100%;
   border-bottom: var(--navbar-border);
   font-weight: bold;
-  
+  cursor: pointer;
 }
 
-.menu a:hover {
+.menu > nav > *:hover {
   background-color: var(--navbar-color);
   color: green;
   
