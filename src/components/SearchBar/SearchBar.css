@@ -1,3 +1,8 @@
+.search{
+  display: flex;
+  width: var(--layout-width);
+}
+
 .search-bar{
   display: flex;
   flex-wrap: wrap;
@@ -16,6 +21,16 @@
   transform:translateY(38%);
 }
 
-.search-not-visible + .search-bar {
+.search-not-visible + .search {
   display: none;
+}
+
+@media screen and (max-width: 768px){
+  .search {
+    justify-content: center;
+  }
+
+  .search-bar{
+    width: auto;
+  }
 }

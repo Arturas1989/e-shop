@@ -39,7 +39,7 @@ export const Header = () => {
           </div>
         </nav>
       </div>
-      <Menu isVisible={isMenuVisible}/>
+      <Menu isVisible={isMenuVisible} setIsSearchBarVisible={setIsSearchBarVisible}/>
     </header>
   )
 };

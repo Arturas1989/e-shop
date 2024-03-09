@@ -130,6 +130,11 @@ exports[`header components renders renders correctly 1`] = `
       >
         Products
       </a>
+      <i
+        className="bi bi-search"
+        data-testid="search-icon2"
+        onClick={[Function]}
+      />
     </nav>
   </div>
 </header>
