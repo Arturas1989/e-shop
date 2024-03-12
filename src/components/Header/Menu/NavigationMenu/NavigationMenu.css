@@ -1,7 +1,7 @@
 .menu{
   width: var(--min-app-width);
   margin: 0 calc(50% - var(--min-app-width)/2);
-  box-shadow: 0 0 3px grey;
+  box-shadow: var(--menu-box-shadow);
 }
 
 
