@@ -88,6 +88,7 @@ header * {
   margin: calc((var(--min-header-height) - var(--min-icon-height)) / 2) var(--app-side-margin);
   min-height: 100%;
   border-bottom: var(--navbar-border);
+  position: relative;
 }
 
 .navbar{

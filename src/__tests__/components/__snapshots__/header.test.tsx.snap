@@ -99,6 +99,8 @@ exports[`header components renders renders correctly 1`] = `
         </i>
         <i
           className="bi bi-person-circle"
+          data-testid="account-icon"
+          onClick={[Function]}
         />
       </div>
     </nav>
@@ -129,6 +131,18 @@ exports[`header components renders renders correctly 1`] = `
         onClick={[Function]}
       >
         Products
+      </a>
+      <div
+        className="menu-item"
+        onClick={[Function]}
+      >
+        Logout
+      </div>
+      <a
+        href="/register"
+        onClick={[Function]}
+      >
+        Register
       </a>
       <i
         className="bi bi-search"
