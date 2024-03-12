@@ -1,0 +1,33 @@
+.login-menu{
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: var(--menu-box-shadow);
+  border-radius: var(--login-menu-border-radius);
+}
+
+.login-menu > .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-menu .menu-item:first-child{
+  border-radius: var(--login-menu-border-radius) var(--login-menu-border-radius) 0 0;
+}
+
+.login-menu .menu-item:last-child{
+  border-radius: 0 0 var(--login-menu-border-radius) var(--login-menu-border-radius);
+}
+
+.login-menu .menu-item{
+  padding: 10px;
+  text-transform: none;
+}
+
+.login-menu .menu-item:hover{
+  padding: 10px;
+  background-color: var(--navbar-color);
+  cursor: pointer;
+}

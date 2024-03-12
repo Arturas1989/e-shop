@@ -1,7 +1,9 @@
 export { Header } from './Header/Header';
-export { Menu } from './Header/Menu/Menu';
+export { NavigationMenu } from './Header/Menu/NavigationMenu/NavigationMenu';
+export { LoginMenu } from './Header/Menu/LoginMenu/LoginMenu';
 export { Hamburger } from './Header/Hamburger/Hamburger';
-export { CloseMenu } from './Header/CloseMenu';
+export { CloseMenu } from './Header/Menu/NavigationMenu/CloseMenu';
+export { LoginLink } from './Header/Menu/LoginMenu/LoginLink';
 
 export { SearchBar } from './SearchBar/SearchBar';
 export { InputBar } from './SearchBar/InputBar';

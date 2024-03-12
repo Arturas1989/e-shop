@@ -1,4 +1,4 @@
 export type MenuProps = {
     isVisible: boolean;
-    setIsSearchBarVisible?: React.Dispatch<React.SetStateAction<boolean>>;
+    setMenu?: React.Dispatch<React.SetStateAction<{ loginMenuVisible: boolean; searchVisible: boolean; navigationMenuVisible: boolean; }>>;
 };

@@ -1,19 +1,20 @@
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/e-shop-logo.png';
 import { useState } from 'react';
-import { Menu, Hamburger, CloseMenu } from '../../components';
+import { NavigationMenu, LoginMenu, Hamburger, CloseMenu } from '../../components';
 
 export const Header = () => {
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
-  const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
+  const [menu, setMenu] = useState({loginMenuVisible: false, searchVisible: false, navigationMenuVisible: false});
+  const {loginMenuVisible, searchVisible, navigationMenuVisible} = menu;
+
   return (
-    <header data-testid="header" id='header' className={`${!isSearchBarVisible ? 'search-not-visible' : ''}`}>
+    <header data-testid="header" id='header' className={`${!searchVisible ? 'search-not-visible' : ''}`}>
       <div className="navbar-container">
         <nav className="navbar">
           <div className="left-nav">
-            <div data-testid="hamburger" className="hamburger" onClick={() => setIsMenuVisible((prev) => !prev)}>
-              <CloseMenu isVisible={isMenuVisible} /> 
-              <Hamburger isVisible={!isMenuVisible} />
+            <div data-testid="hamburger" className="hamburger" onClick={() => setMenu((prev) => ({...prev, navigationMenuVisible: !prev.navigationMenuVisible}))}>
+              <CloseMenu isVisible={navigationMenuVisible} /> 
+              <Hamburger isVisible={!navigationMenuVisible} />
             </div>
             
             <Link to='/'>
@@ -31,15 +32,20 @@ export const Header = () => {
           </div>
           <div className="right-nav">
             <i className="bi bi-gear-wide-connected"></i>
-            <i data-testid="search-icon" className="bi bi-search" onClick={() => setIsSearchBarVisible(prev => !prev)}></i>
+            <i data-testid="search-icon" className="bi bi-search" 
+              onClick={() => setMenu((prev) => ({...prev, loginMenuVisible: false, searchVisible: !prev.searchVisible}))}>
+            </i>
             <i className="bi bi-cart-fill">
               <div className="cart-items">0</div>
             </i>
-            <i className="bi bi-person-circle"></i>
+            <i data-testid="account-icon" className="bi bi-person-circle" 
+              onClick={() => setMenu((prev) => ({...prev, loginMenuVisible: !prev.loginMenuVisible, searchVisible: false}))}>
+            </i>
           </div>
         </nav>
+        <LoginMenu isVisible={loginMenuVisible}/>
       </div>
-      <Menu isVisible={isMenuVisible} setIsSearchBarVisible={setIsSearchBarVisible}/>
+      <NavigationMenu isVisible={navigationMenuVisible} setMenu={setMenu}/>
     </header>
   )
 };
