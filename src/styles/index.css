@@ -20,7 +20,8 @@ code {
 @import '../components/Footer/Footer.css';
 @import '../components/Header/Header.css';
 @import '../components/Header/Hamburger/Hamburger.css';
-@import '../components/Header/Menu/Menu.css';
+@import '../components/Header/Menu/NavigationMenu/NavigationMenu.css';
+@import '../components/Header/Menu/LoginMenu/LoginMenu.css';
 @import '../components/SearchBar/SearchBar.css';
 @import '../components/SearchBar/InputBar.css';
 
