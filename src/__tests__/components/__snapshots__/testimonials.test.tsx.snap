@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testimonial test render test 1`] = `
+<section
+  className="testimonials"
+>
+  <h2
+    className="heading"
+  >
+    Testimonials
+  </h2>
+  <div
+    className="testimonial-cards"
+  >
+    <div
+      className="testimonial-card"
+    >
+      <div
+        className="content-container"
+      >
+        <h3>
+          Excelent
+        </h3>
+        <p
+          className="description"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, sapiente laboriosam? Eligendi aliquam deleniti, inventore laudantium illo rem in officia.
+        </p>
+        <div
+          className="user"
+        >
+          <i
+            className="bi bi-person-circle"
+          />
+          <p
+            className="name"
+          >
+            Tom
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="testimonial-card"
+    >
+      <div
+        className="content-container"
+      >
+        <h3>
+          Nice
+        </h3>
+        <p
+          className="description"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, sapiente laboriosam? Eligendi aliquam deleniti, inventore laudantium illo rem in officia.
+        </p>
+        <div
+          className="user"
+        >
+          <i
+            className="bi bi-person-circle"
+          />
+          <p
+            className="name"
+          >
+            John
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="testimonial-card"
+    >
+      <div
+        className="content-container"
+      >
+        <h3>
+          Best quality
+        </h3>
+        <p
+          className="description"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, sapiente laboriosam? Eligendi aliquam deleniti, inventore laudantium illo rem in officia.
+        </p>
+        <div
+          className="user"
+        >
+          <i
+            className="bi bi-person-circle"
+          />
+          <p
+            className="name"
+          >
+            Ben
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

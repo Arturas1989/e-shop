@@ -1,11 +1,11 @@
-import { FeaturedProducts } from "./components/FeaturedProducts/FeaturedProducts";
-import { Hero } from "./components/Hero/Hero";
+import { Hero, FeaturedProducts, Testimonials } from "./index";
 
 export const Home = () => {
   return (
     <main data-testid='home' className="home">
       <Hero />
       <FeaturedProducts />
+      <Testimonials />
     </main>
   )
 };

@@ -3,6 +3,7 @@ import { Products } from '../../../../components/Products/Products';
 import { useData } from '../../../../hooks/useData';
 import { Product } from '../../../../types';
 import { toast } from 'react-toastify';
+import { Heading } from '../../../../components';
 
 export const FeaturedProducts = () => {
   const [products, error] = useData<Product>('products');
@@ -13,7 +14,7 @@ export const FeaturedProducts = () => {
 
   return (
     <section className="feature">
-      <h2>Featured products</h2>
+      <Heading>Featured products</Heading>
       <Products products={products} />
     </section>
   );

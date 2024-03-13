@@ -24,11 +24,13 @@ code {
 @import '../components/Header/Menu/LoginMenu/LoginMenu.css';
 @import '../components/SearchBar/SearchBar.css';
 @import '../components/SearchBar/InputBar.css';
+@import '../components/Heading/Heading.css';
 
 /* buttons */
 @import '../components/Buttons/PrimaryButton/PrimaryButton.css';
 @import '../components/Buttons/SecondaryButton/SecondaryButton.css';
 
+/* product card */
 @import '../components/ProductCard/ProductCard.css';
 @import '../components/ProductCard/Rating/Rating.css';
 @import '../components/ProductCard/BestSeller/BestSeller.css';
@@ -36,6 +38,8 @@ code {
 /* Home components */
 @import '../pages/Home/components/Hero/Hero.css';
 @import '../pages/Home/components/FeaturedProducts/FeaturedProducts.css';
+@import '../pages/Home/components/Testimonials/Testimonials.css';
+@import '../pages/Home/components/Testimonials/TestimonialCards.css';
 
 /* Pages */
 @import '../pages/PageNotFound/PageNotFound.css';
