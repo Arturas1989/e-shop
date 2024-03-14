@@ -1,4 +1,4 @@
-import { Hero, FeaturedProducts, Testimonials } from "./index";
+import { Hero, FeaturedProducts, Testimonials, Faq } from "./index";
 
 export const Home = () => {
   return (
@@ -6,6 +6,7 @@ export const Home = () => {
       <Hero />
       <FeaturedProducts />
       <Testimonials />
+      <Faq />
     </main>
   )
 };
