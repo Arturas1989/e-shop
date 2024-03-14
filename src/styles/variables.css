@@ -20,7 +20,10 @@
   --menu-box-shadow: 0 0 3px grey;
   --login-menu-border-radius: 10px;
   --section-gap: 30px;
-  --product-card-box-shadow: 0 0 5px rgb(235, 237, 239);
+  --section-border-color: rgb(235, 237, 239);
+  --product-card-box-shadow: 0 0 5px var(--section-border-color);
+  --testimonial-text-color: rgb(116, 125, 136);
+  --testimonial-content-padding: 30px;
 }
 
 @media screen and (max-width: 1100px){
