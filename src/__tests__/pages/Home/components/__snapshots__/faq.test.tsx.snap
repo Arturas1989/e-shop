@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Faq tests render test 1`] = `
+<section
+  className="faq"
+>
+  <h2
+    className="heading"
+  >
+    Frequently asked questions
+  </h2>
+  <div
+    className="questions"
+  >
+    <div
+      className="question"
+    >
+      <div
+        className="colapsed"
+      >
+        <p>
+          Why should I use e-shop?
+        </p>
+        <i
+          className="bi bi-chevron-down"
+          data-testid="expand-control-icon"
+          onClick={[Function]}
+        />
+      </div>
+    </div>
+    <div
+      className="question"
+    >
+      <div
+        className="colapsed"
+      >
+        <p>
+          Can I access my e-shop on mobile?
+        </p>
+        <i
+          className="bi bi-chevron-down"
+          data-testid="expand-control-icon"
+          onClick={[Function]}
+        />
+      </div>
+    </div>
+    <div
+      className="question"
+    >
+      <div
+        className="colapsed"
+      >
+        <p>
+          Do you offer refunds?
+        </p>
+        <i
+          className="bi bi-chevron-down"
+          data-testid="expand-control-icon"
+          onClick={[Function]}
+        />
+      </div>
+    </div>
+    <div
+      className="question"
+    >
+      <div
+        className="colapsed"
+      >
+        <p>
+          Do you support International payments?
+        </p>
+        <i
+          className="bi bi-chevron-down"
+          data-testid="expand-control-icon"
+          onClick={[Function]}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;
