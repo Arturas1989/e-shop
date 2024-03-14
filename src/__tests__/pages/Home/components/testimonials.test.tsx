@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import { Testimonials } from '../../pages/Home';
+import { Testimonials } from '../../../../pages/Home';
 
 describe('Testimonial test', () => {
   test('render test', () => {
