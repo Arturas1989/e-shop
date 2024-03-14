@@ -40,6 +40,7 @@ code {
 @import '../pages/Home/components/FeaturedProducts/FeaturedProducts.css';
 @import '../pages/Home/components/Testimonials/Testimonials.css';
 @import '../pages/Home/components/Testimonials/TestimonialCards.css';
+@import '../pages/Home/components/Faq/Faq.css';
 
 /* Pages */
 @import '../pages/PageNotFound/PageNotFound.css';
