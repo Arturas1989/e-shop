@@ -25,6 +25,7 @@ code {
 @import '../components/SearchBar/SearchBar.css';
 @import '../components/SearchBar/InputBar.css';
 @import '../components/Heading/Heading.css';
+@import '../components/FormField/FormField.css';
 
 /* buttons */
 @import '../components/Buttons/PrimaryButton/PrimaryButton.css';
@@ -45,6 +46,7 @@ code {
 /* Pages */
 @import '../pages/PageNotFound/PageNotFound.css';
 @import '../pages/Home/Home.css';
+@import '../pages/Register/Register.css';
 
 
 @import 'bootstrap-icons/font/bootstrap-icons.css';
