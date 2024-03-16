@@ -1,0 +1,15 @@
+.form-field{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-field .input-bar{
+  width: 100%;
+  padding-left: 10px;
+}
+
+.form-field label{
+  font-weight: 500;
+  font-size: 0.9rem;
+}

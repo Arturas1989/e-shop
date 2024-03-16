@@ -1,4 +1,6 @@
 .heading{
   padding-bottom: 5px;
   border-bottom: 3px solid black;
+  width: fit-content;
+  align-self: center;
 }

@@ -1,0 +1,23 @@
+
+.register, .register-section, .register-form, .register-section h2{
+  display: flex;
+}
+
+.register{
+  justify-content: center;
+}
+
+.register-section{
+  flex-direction: column;
+  width: 50%;
+  gap: 30px;
+}
+
+.register-form{
+  flex-direction: column;
+  gap: 20px;
+}
+
+.register-form button{
+  min-width: 150px;
+}

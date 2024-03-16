@@ -2,10 +2,12 @@ import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/e-shop-logo.png';
 import { useState } from 'react';
 import { NavigationMenu, LoginMenu, Hamburger, CloseMenu } from '../../components';
+import { useLogin } from '../../hooks/useLogin';
 
 export const Header = () => {
   const [menu, setMenu] = useState({loginMenuVisible: false, searchVisible: false, navigationMenuVisible: false});
   const {loginMenuVisible, searchVisible, navigationMenuVisible} = menu;
+  const isLoggedIn = useLogin();
 
   return (
     <header data-testid="header" id='header' className={`${!searchVisible ? 'search-not-visible' : ''}`}>
@@ -43,7 +45,7 @@ export const Header = () => {
             </i>
           </div>
         </nav>
-        <LoginMenu isVisible={loginMenuVisible}/>
+        <LoginMenu isLoggedIn={isLoggedIn} isVisible={loginMenuVisible}/>
       </div>
       <NavigationMenu isVisible={navigationMenuVisible} setMenu={setMenu}/>
     </header>

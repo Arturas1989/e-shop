@@ -16,3 +16,5 @@ export { SecondaryButton } from './Buttons/SecondaryButton/SecondaryButton';
 export { Rating } from './ProductCard/Rating/Rating';
 export { BestSeller } from './ProductCard/BestSeller/BestSeller';
 export { Heading } from './Heading/Heading';
+
+export { FormField } from './FormField/FormField';
