@@ -132,12 +132,13 @@ exports[`header components renders renders correctly 1`] = `
       >
         Products
       </a>
-      <div
+      <a
         className="menu-item"
+        href="/login"
         onClick={[Function]}
       >
-        Logout
-      </div>
+        Login
+      </a>
       <a
         href="/register"
         onClick={[Function]}
