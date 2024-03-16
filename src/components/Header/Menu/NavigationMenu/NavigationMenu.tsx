@@ -1,10 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
 import { MenuProps } from '../../../../types';
 import { LoginLink } from '../LoginMenu/LoginLink';
-import { getAuth } from 'firebase/auth';
+import { useLogin } from '../../../../hooks/useLogin';
 
 export const NavigationMenu = ({isVisible, setMenu}: MenuProps) => {
-  const isLoggedIn = getAuth().currentUser !== null;
+  const isLoggedIn = useLogin();
   return (
     <div data-testid="menu" className={`menu ${isVisible ? 'isVisible' : 'notVisible'}`}>
       <nav>
