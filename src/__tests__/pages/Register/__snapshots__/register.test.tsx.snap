@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register page test render test 1`] = `
+<main
+  className="register"
+>
+  <section
+    className="register-section"
+  >
+    <h2
+      className="heading"
+    >
+      Register
+    </h2>
+    <form
+      className="register-form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-field"
+      >
+        <label
+          htmlFor="name"
+        >
+          Your name
+        </label>
+        <input
+          autoComplete="off"
+          className="input-bar"
+          id="name"
+          placeholder="Enter your name"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="form-field"
+      >
+        <label
+          htmlFor="email"
+        >
+          Your email
+        </label>
+        <input
+          autoComplete="off"
+          className="input-bar"
+          id="email"
+          placeholder="Enter your email"
+          required={true}
+          type="email"
+        />
+      </div>
+      <div
+        className="form-field"
+      >
+        <label
+          htmlFor="password"
+        >
+          Your password
+        </label>
+        <input
+          autoComplete="off"
+          className="input-bar"
+          id="password"
+          placeholder="Enter your password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <button
+        className="secondary-button"
+      >
+        Register
+      </button>
+    </form>
+  </section>
+</main>
+`;
