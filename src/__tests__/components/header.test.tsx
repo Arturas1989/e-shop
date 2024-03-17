@@ -2,12 +2,9 @@ import renderer from 'react-test-renderer';
 import { fireEvent, screen, render } from '@testing-library/react';
 import { Header } from '../../components';
 import { BrowserRouter } from 'react-router-dom';
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '../../db/firebase';
 
 describe('header components renders', () => {
   test('renders correctly', () => {
-    initializeApp(firebaseConfig);
     const tree = renderer
       .create(
         <BrowserRouter>
