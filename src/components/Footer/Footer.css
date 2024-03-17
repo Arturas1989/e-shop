@@ -19,9 +19,21 @@
 
 .socials{
   display: flex;
+  width: fit-content;
   gap: 30px;
 }
 
 .socials *:hover{
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px){
+  .footer-bar{
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  .footer-bar * {
+    font-size: 0.9rem;
+  }
 }
