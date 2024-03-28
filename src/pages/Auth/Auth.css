@@ -5,6 +5,7 @@
 
 .main{
   min-height: var(--login-min-height);
+  padding: 20px 0;
   justify-content: center;
   box-shadow: var(--product-card-box-shadow);
   border-radius: 10px;
