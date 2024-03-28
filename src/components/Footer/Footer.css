@@ -1,15 +1,19 @@
 #footer{
+  display: flex;
   margin: 0;
   width: 100%;
   border-top: var(--navbar-border);
+  min-height: var(--footer-min-height);
 }
 
 .footer-bar{
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-self: center;
   margin: 0 var(--app-side-inner-margin);
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .footer-bar * {

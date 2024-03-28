@@ -85,7 +85,7 @@ header * {
 
 .navbar-container{
   width: var(--min-app-width);
-  margin: calc((var(--min-header-height) - var(--min-icon-height)) / 2) var(--app-side-margin);
+  margin: var(--navbar-container-margin-top-bottom) var(--app-side-margin);
   min-height: 100%;
   border-bottom: var(--navbar-border);
   position: relative;
