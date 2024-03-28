@@ -2,10 +2,10 @@
 
 exports[`Register page test render test 1`] = `
 <main
-  className="register"
+  className="main"
 >
   <section
-    className="register-section"
+    className="main-section"
   >
     <h2
       className="heading"
@@ -13,7 +13,7 @@ exports[`Register page test render test 1`] = `
       Register
     </h2>
     <form
-      className="register-form"
+      className="main-form"
       onSubmit={[Function]}
     >
       <div
