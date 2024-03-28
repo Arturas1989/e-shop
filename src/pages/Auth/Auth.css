@@ -1,0 +1,33 @@
+
+.main, .main-section, .main-form, .main-section h2{
+  display: flex;
+}
+
+.main{
+  min-height: var(--login-min-height);
+  justify-content: center;
+  box-shadow: var(--product-card-box-shadow);
+  border-radius: 10px;
+}
+
+.main-section{
+  align-self: center;
+  flex-direction: column;
+  width: 50%;
+  gap: 20px;
+}
+
+.main-form{
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-form button{
+  min-width: 150px;
+}
+
+@media screen and (max-width: 768px){
+  .main-form button{
+    min-width: 100%;
+  }
+}
