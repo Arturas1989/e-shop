@@ -46,7 +46,7 @@ code {
 /* Pages */
 @import '../pages/PageNotFound/PageNotFound.css';
 @import '../pages/Home/Home.css';
-@import '../pages/Register/Register.css';
+@import '../pages/Auth/Auth.css';
 
 
 @import 'bootstrap-icons/font/bootstrap-icons.css';
