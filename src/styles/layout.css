@@ -1,7 +1,7 @@
 .App{
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: var(--app-section-gap);
 }
 
 .App > * {
