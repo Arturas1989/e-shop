@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page test render test 1`] = `
+<main
+  className="main login"
+>
+  <section
+    className="main-section"
+  >
+    <h2
+      className="heading"
+    >
+      Login
+    </h2>
+    <form
+      className="main-form"
+    >
+      <div
+        className="form-field"
+      >
+        <label
+          htmlFor="email"
+        >
+          Your email
+        </label>
+        <input
+          autoComplete="off"
+          className="input-bar"
+          id="email"
+          placeholder="Enter your email"
+          required={true}
+          type="email"
+        />
+      </div>
+      <div
+        className="form-field"
+      >
+        <label
+          htmlFor="password"
+        >
+          Your password
+        </label>
+        <input
+          autoComplete="off"
+          className="input-bar"
+          id="password"
+          placeholder="Enter your password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <button
+        className="secondary-button"
+      >
+        Login
+      </button>
+    </form>
+  </section>
+</main>
+`;

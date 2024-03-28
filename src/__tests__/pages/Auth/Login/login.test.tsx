@@ -1,13 +1,13 @@
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import { Register } from '../../../pages';
+import { Login } from '../../../../pages';
 
-describe('Register page test', () => {
+describe('Login page test', () => {
   test('render test', () => {
     const tree = renderer
       .create(
         <BrowserRouter>
-          <Register />
+          <Login />
         </BrowserRouter>
       )
       .toJSON();

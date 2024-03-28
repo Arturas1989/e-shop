@@ -1,39 +1,40 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../db/firebase";
-import { useNavigate } from "react-router-dom";
-import { FormField, Heading, SecondaryButton } from '../../components';
-import { toast } from "react-toastify";
-import { type FormFields } from "../../types";
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from '../../../db/firebase';
+import { useNavigate } from 'react-router-dom';
+import { FormField, Heading, SecondaryButton } from '../../../components';
+import { toast } from 'react-toastify';
+import { type FormFields } from '../../../types';
 
 export const Register = () => {
   const navigate = useNavigate();
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as EventTarget & FormFields;
-    const {name, email, password} = form;
+    const { name, email, password } = form;
 
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      setDoc(doc(db, "users", user.uid), {
-        name: name.value,
-        email: email.value,
+      .then((userCredential) => {
+        const user = userCredential.user;
+        setDoc(doc(db, 'users', user.uid), {
+          name: name.value,
+          email: email.value,
+        });
+        navigate('/');
+      })
+      .catch((error) => {
+        const emailExist =
+          error.message.indexOf('auth/email-already-in-use') !== -1;
+        if (emailExist) toast.error('email already exists');
       });
-      navigate('/');
-    })
-    .catch((error) => {
-      const emailExist = error.message.indexOf('auth/email-already-in-use') !== -1;
-      if(emailExist) toast.error('email already exists');
-    });
   };
 
   return (
-    <main className="register">
-      <section className="register-section">
+    <main className="main">
+      <section className="main-section">
         <Heading>Register</Heading>
-        <form className="register-form" onSubmit={(e) => handleRegister(e)}>
+        <form className="main-form" onSubmit={(e) => handleRegister(e)}>
           <FormField
             type="text"
             htmlFor="name"
