@@ -14,6 +14,7 @@ exports[`Login page test render test 1`] = `
     </h2>
     <form
       className="main-form"
+      onSubmit={[Function]}
     >
       <div
         className="form-field"
