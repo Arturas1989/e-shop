@@ -1,10 +1,7 @@
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
-import { db } from '../../../db/firebase';
 import { useNavigate } from 'react-router-dom';
 import { FormField, Heading, SecondaryButton } from '../../../components';
-import { toast } from 'react-toastify';
 import { type FormFields } from '../../../types';
+import { Auth } from '../../../services/Auth';
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -13,21 +10,9 @@ export const Register = () => {
     const form = e.target as EventTarget & FormFields;
     const { name, email, password } = form;
 
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email.value, password.value)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        setDoc(doc(db, 'users', user.uid), {
-          name: name.value,
-          email: email.value,
-        });
-        navigate('/');
-      })
-      .catch((error) => {
-        const emailExist =
-          error.message.indexOf('auth/email-already-in-use') !== -1;
-        if (emailExist) toast.error('email already exists');
-      });
+    const auth = new Auth(email.value, password.value, navigate);
+    auth.register(name.value);
+    
   };
 
   return (
