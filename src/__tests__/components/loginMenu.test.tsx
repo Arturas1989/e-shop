@@ -23,6 +23,23 @@ describe('login menu test', () => {
 
   });
 
+  test('login menu disapears on other element click', () => {
+    render(
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
+    );
+    const accountIcon = screen.getByTestId('account-icon');
+    fireEvent.click(accountIcon);
+
+    const loginMenu = screen.getByTestId('login-menu');
+    expect(loginMenu).toBeInTheDocument();
+
+    fireEvent.click(document.body);
+    expect(loginMenu).not.toBeInTheDocument();
+
+  });
+
   test('search bar isn\'t displayed when login menu displayed', () => {
     render(
       <BrowserRouter>
