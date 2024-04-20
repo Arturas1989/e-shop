@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/e-shop-logo.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavigationMenu, LoginMenu, Hamburger, CloseMenu } from '../../components';
 import { useLogin } from '../../hooks/useLogin';
 
@@ -8,6 +8,19 @@ export const Header = () => {
   const [menu, setMenu] = useState({loginMenuVisible: false, searchVisible: false, navigationMenuVisible: false});
   const {loginMenuVisible, searchVisible, navigationMenuVisible} = menu;
   const isLoggedIn = useLogin();
+
+  useEffect(() => {
+    const hideSubMenu = (e: MouseEvent) => {
+      const {target} = e;
+      if(target instanceof HTMLElement){
+        const notAccountIcon = target.classList.value !== 'bi bi-person-circle';
+        if(notAccountIcon) setMenu((prev) => ({...prev, loginMenuVisible: false}));
+      }
+      
+    }
+    document.body.addEventListener('click', hideSubMenu);
+    return () => document.body.removeEventListener('click', hideSubMenu);
+  }, [])
 
   return (
     <header data-testid="header" id='header' className={`${!searchVisible ? 'search-not-visible' : ''}`}>
