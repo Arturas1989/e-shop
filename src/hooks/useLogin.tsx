@@ -1,11 +1,11 @@
 import { Auth, getAuth, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 
-const checkAuth = (): Auth => {
+export const checkAuth = (): Auth => {
   try{
     return getAuth();
   } catch {
-    return {currentUser: null} as Auth;
+    return {currentUser: {email: null, displayName: null}} as Auth;
   }
 }
 
