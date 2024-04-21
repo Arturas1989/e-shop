@@ -21,13 +21,21 @@
   border-radius: 0 0 var(--login-menu-border-radius) var(--login-menu-border-radius);
 }
 
-.login-menu .menu-item{
+.login-menu .menu-item, .container > *{
   padding: 10px;
   text-transform: none;
 }
 
-.login-menu .menu-item:hover{
+.login-menu .menu-item:hover, .container > *:hover{
   padding: 10px;
   background-color: var(--navbar-color);
+}
+
+.login-menu .menu-item:hover{
   cursor: pointer;
+}
+
+.container span{
+  font-weight: bold;
+  text-transform: none;
 }
