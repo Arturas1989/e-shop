@@ -132,19 +132,12 @@ exports[`header components renders renders correctly 1`] = `
       >
         Products
       </a>
-      <a
+      <div
         className="menu-item"
-        href="/login"
         onClick={[Function]}
       >
-        Login
-      </a>
-      <a
-        href="/register"
-        onClick={[Function]}
-      >
-        Register
-      </a>
+        Logout
+      </div>
       <i
         className="bi bi-search"
         data-testid="search-icon2"
