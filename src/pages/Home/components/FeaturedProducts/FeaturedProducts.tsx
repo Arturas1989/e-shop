@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
 import { Products } from '../../../../components/Products/Products';
 import { useData } from '../../../../hooks/useData';
-import { Product } from '../../../../types';
+import { DataInfo, Product } from '../../../../types';
 import { toast } from 'react-toastify';
 import { Heading } from '../../../../components';
 
 export const FeaturedProducts = () => {
-  const [products, error] = useData<Product>('products');
+  const dataInfo: DataInfo = {
+    collectionName: 'products',
+    onlyFeatured: true
+  }
+  const [products, error] = useData<Product>(dataInfo);
 
   useEffect(() => {
     if (error) toast.error(error);
