@@ -7,4 +7,5 @@ export type Product = {
   rating: RatingNum;
   best_seller: boolean;
   img_name: string;
+  isFeatured: boolean;
 };
