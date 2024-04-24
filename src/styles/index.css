@@ -46,6 +46,7 @@ code {
 /* Pages */
 @import '../pages/PageNotFound/PageNotFound.css';
 @import '../pages/Home/Home.css';
+@import '../pages/Products/Products.css';
 @import '../pages/Auth/Auth.css';
 
 
