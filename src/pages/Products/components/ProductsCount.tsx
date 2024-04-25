@@ -1,9 +1,13 @@
+// import { Suspense } from "react";
+import { Loading } from "../../../components";
+
 type ProductsCountProps = {
   productsCount: number | undefined;
+  isLoaded: boolean;
 };
 
-export const ProductsCount = ({ productsCount }: ProductsCountProps) => {
+export const ProductsCount = ({ productsCount, isLoaded }: ProductsCountProps) => {
   return (
-    <h2>All products ({productsCount})</h2>
+      isLoaded ? <h2>All products ({productsCount})</h2> : <Loading />
   )
 };
