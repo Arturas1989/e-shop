@@ -3,25 +3,28 @@ import { useEffect, useState } from 'react';
 import { db } from '../db/firebase';
 import { credentialsNotSet } from '../utils/helpers';
 import type { DataInfo } from '../types';
+import { toast } from 'react-toastify';
 
 
 export const useData = <T extends DocumentData>(dataInfo: DataInfo) => {
 
   const {collectionName, onlyFeatured} = dataInfo
   const [colData, setColData] = useState<T[] | null>(null);
-  const [error, setError] = useState('');
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (credentialsNotSet(db.app.options)) {
-      setError(`${collectionName} failed to fetch`);
+      toast.error(`${collectionName} failed to fetch`)
+      setIsLoaded(true);
     } else {
       const colRef = collection(db, collectionName);
       getDocs(colRef).then((fireData) => {
         let data = fireData.docs.map((doc) => doc.data() as T);
         if(onlyFeatured) data = data.filter(product => product.isFeatured);
         setColData(data);
+        setIsLoaded(true);
       });
     }
   }, [collectionName, onlyFeatured]);
-  return [colData, error] as [T[] | null, string];
+  return [colData, isLoaded] as [T[] | null, boolean];
 };
