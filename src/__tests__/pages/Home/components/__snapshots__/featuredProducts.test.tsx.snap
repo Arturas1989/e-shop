@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FeaturedProducts components renders renders correctly 1`] = `
+exports[`Products tests FeaturedProducts component renders correctly 1`] = `
 <section
   className="feature"
 >
@@ -10,7 +10,12 @@ exports[`FeaturedProducts components renders renders correctly 1`] = `
     Featured products
   </h2>
   <div
-    className="products"
-  />
+    data-testid="loading"
+  >
+    <img
+      alt="spinner"
+      src="spinner.gif"
+    />
+  </div>
 </section>
 `;
