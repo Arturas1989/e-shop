@@ -11,11 +11,11 @@ export const Products = ({ name }: ProductsProps) => {
     collectionName: 'products',
     onlyFeatured: false,
   }
-  const [products] = useData<Product>(dataInfo);
+  const [products, isLoaded] = useData<Product>(dataInfo);
   return (
     <main>
       <section className="products-top">
-        <ProductsCount productsCount={products?.length}/>
+        <ProductsCount productsCount={products?.length} isLoaded={isLoaded} />
       </section>
     </main>
   )
