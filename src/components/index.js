@@ -18,3 +18,5 @@ export { BestSeller } from './ProductCard/BestSeller/BestSeller';
 export { Heading } from './Heading/Heading';
 
 export { FormField } from './FormField/FormField';
+
+export { Loading } from './Loading/Loading';
