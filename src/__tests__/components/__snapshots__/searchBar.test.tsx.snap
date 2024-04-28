@@ -13,6 +13,7 @@ exports[`test description renders correctly 1`] = `
     />
     <input
       className="input-bar"
+      name="search"
       placeholder="Search"
       type="text"
     />
