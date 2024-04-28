@@ -1,0 +1,99 @@
+.filter-toggle{
+  padding: 7px;
+  background-color: rgba(229, 231, 235,0.5);
+  border-radius: 12px;
+}
+
+.filter-toggle * {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.filter-toggle:hover{
+  cursor: pointer;
+  background-color: rgb(229, 231, 235);
+}
+
+.filter, .filter-group{
+  display: flex;
+  flex-direction: column;
+  gap: 3px
+}
+
+.filter{
+  inset: 0;
+  padding: 0 30px;
+  position: fixed;
+  width: fit-content;
+  min-width: 350px;
+  height: 100dvh;
+  background-color: white;
+  gap: 20px
+}
+
+.filter input {
+  width: 15px;
+  height: 15px;
+}
+
+.filter > button {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 5px 10px;
+  min-width: 150px;
+  min-height: 50px;
+  border-radius: 15px;
+}
+
+.filter > button:hover {
+  background-color: rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+.filter > button:hover *{
+  color: rgba(255,255,255);
+}
+
+.filter-top{
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--filter-padding-top) 0 var(--filter-padding-bottom) 0;
+  border-bottom: var(--navbar-border);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-top > button {
+  padding: var(--filter-close-button-padding);
+  border-radius: 50%;
+}
+
+.filter-top > button:hover {
+  background-color: rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.filter-top > button:hover > i {
+  color: black;
+  
+}
+
+.filter-top * {
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.5);
+  font-size: var(--navbar-font-size);
+}
+
+.filter h3 {
+  text-transform: capitalize;
+}
+
+.input-group{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
