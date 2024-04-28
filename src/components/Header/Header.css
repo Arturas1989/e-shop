@@ -53,6 +53,11 @@ header * {
 
 .middle-nav a {
   padding: 1rem 0.5rem;
+  
+}
+
+.middle-nav a, .visible p {
+  font-size: var(--navbar-font-size);
 }
 
 .middle-nav > div:hover{
