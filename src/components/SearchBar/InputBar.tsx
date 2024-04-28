@@ -5,6 +5,6 @@ type InputBarProps = {
 
 export const InputBar = ({ placeholder, type }: InputBarProps) => {
   return (
-    <input className="input-bar" type={type} placeholder={placeholder} />
+    <input className="input-bar" name="search" type={type} placeholder={placeholder} />
   )
 };
