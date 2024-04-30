@@ -9,10 +9,14 @@ exports[`ProductCard components renders renders correctly 1`] = `
   >
     best seller
   </div>
-  <img
-    alt="headphones"
-    src="/assets/headphones.jpg"
-  />
+  <div
+    className="img-container"
+  >
+    <img
+      alt="headphones"
+      src="/assets/headphones.jpg"
+    />
+  </div>
   <div
     className="bottom"
   >

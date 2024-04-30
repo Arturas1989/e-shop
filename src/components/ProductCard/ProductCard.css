@@ -11,16 +11,27 @@
   box-shadow: none;
 }
 
+.bottom > p {
+  min-height: 200px;
+}
+
 .product-card{
   width: var(--featured-product-width);
   border-radius: var(--featured-product-border-radius);
 }
 
-.product-card img{
+.product-card .img-container, .product-card img{
+  width: 100%;
   max-height: 200px;
 }
 
+.product-card .img-container{
+  padding: 10px;
+}
 
+.product-card img{
+  object-fit: contain;
+}
 
 .price-row{
   width: 100%;
@@ -40,8 +51,6 @@
   align-items: center;
   gap: 30px
 }
-
-
 
 @media screen and (max-width: 855px){
   .product-card{
