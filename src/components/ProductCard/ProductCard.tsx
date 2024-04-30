@@ -10,7 +10,9 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <div className="product-card">
       <BestSeller isBestSeller={best_seller} />
-      <img src={`/assets/${img_name}`} alt="headphones" />
+      <div className="img-container">
+        <img src={`/assets/${img_name}`} alt="headphones" />
+      </div>
       <div className="bottom">
         <h1>{name}</h1>
         <p>
