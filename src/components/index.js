@@ -20,3 +20,6 @@ export { Heading } from './Heading/Heading';
 export { FormField } from './FormField/FormField';
 
 export { Loading } from './Loading/Loading';
+
+export { Products } from './Products/Products';
+
