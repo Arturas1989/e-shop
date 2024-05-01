@@ -10,7 +10,7 @@ export const Register = () => {
     const form = e.target as EventTarget & FormFields;
     const { name, email, password } = form;
 
-    const auth = new Auth(email.value, password.value, navigate);
+    const auth = new Auth(email.value, password.value, navigate, '/');
     auth.register(name.value);
     
   };
