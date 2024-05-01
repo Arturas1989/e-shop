@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { FilterOpenButton, InputGroup } from '../../components';
-import { type FilterFields } from '../../../../types';
+import { useInitialData, useFilter } from '../../../../hooks';
+import { type Product, FilterFields } from '../../../../types';
 
 type FilterProps = {
-  name?: string;
+  setData: React.Dispatch<React.SetStateAction<Product[] | null>>;
+  productData: Product[] | null;
 };
 
-export const Filter = ({ name }: FilterProps) => {
+export const Filter = ({ setData, productData }: FilterProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [fields, setFields] = useState<FilterFields>({
     price: '',
@@ -15,8 +17,18 @@ export const Filter = ({ name }: FilterProps) => {
     in_stock: '',
   });
 
+  const products = useInitialData(productData);
+  useFilter({ products, fields, setData });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFields((prev) => ({ ...prev, [e.target.name]: e.target.id }));
+    setFields((prev) => ({
+      ...prev,
+      [e.target.name]:
+        e.target.type === 'checkbox' &&
+        prev[e.target.name as keyof FilterFields]
+          ? ''
+          : e.target.id,
+    }));
   };
 
   return (
