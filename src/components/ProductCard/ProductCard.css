@@ -56,4 +56,8 @@
   .product-card{
     width: 100%;
   }
+
+  .bottom > p {
+    min-height: 0px;
+  }
 }
