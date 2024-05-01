@@ -31,6 +31,7 @@ header .notVisible{
 }
 
 header .isVisible{
+  margin-bottom: 20px;
   visibility: visible;
   opacity: 1;
   transition: opacity 1s linear;

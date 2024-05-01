@@ -13,7 +13,7 @@ export const NavigationMenu = ({isVisible, setMenu}: MenuProps) => {
         <NavLink to="/products">Products</NavLink>
         <LoginLink />
         {!isLoggedIn && <Link to='/register' >Register</Link>}
-        <i data-testid="search-icon2" className="bi bi-search" onClick={() => setMenu!((prev) => ({...prev, searchVisible: true}))}></i>
+        <i data-testid="search-icon2" className="bi bi-search" onClick={() => setMenu!((prev) => ({...prev, searchVisible: !prev.searchVisible}))}></i>
       </nav>
     </div>
   );
