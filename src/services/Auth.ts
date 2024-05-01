@@ -14,13 +14,15 @@ export class Auth {
   private email;
   private password;
   private navigate;
+  private redirect_to;
   private auth;
 
-  constructor(email: string, password: string, navigate: NavigateFunction) {
+  constructor(email: string, password: string, navigate: NavigateFunction, redirect_to: string) {
     this.email = email;
     this.password = password;
     this.navigate = navigate;
     this.auth = getAuth();
+    this.redirect_to = redirect_to;
   }
 
   register(name: string) {
@@ -29,7 +31,7 @@ export class Auth {
         const user = userCredential.user;
         this.updateUser(name, user);
         
-        this.navigate('/');
+        this.navigate(this.redirect_to);
       })
       .catch((error) => {
         const emailExist =
@@ -42,7 +44,7 @@ export class Auth {
   login() {
     signInWithEmailAndPassword(this.auth, this.email, this.password)
       .then(() => {
-        this.navigate('/');
+        this.navigate(this.redirect_to);
       })
       .catch((error) => {
         if (error.code === 'auth/invalid-login-credentials')

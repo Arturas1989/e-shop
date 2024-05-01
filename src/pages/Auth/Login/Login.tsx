@@ -1,15 +1,17 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FormField, Heading, SecondaryButton } from '../../../components';
 import { Auth } from '../../../services/Auth';
 import { type FormFields } from '../../../types';
 
 export const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirect_to = location.state ? location.state : '/';
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as EventTarget & Omit<FormFields, 'name'>;
     const { email, password } = form;
-    const auth = new Auth(email.value, password.value, navigate);
+    const auth = new Auth(email.value, password.value, navigate, redirect_to);
     auth.login();
   }
   return (
