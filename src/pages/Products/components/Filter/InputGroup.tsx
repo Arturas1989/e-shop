@@ -30,7 +30,7 @@ export const InputGroup = ({
         id={id}
         checked={fields[name] === id}
       />
-      <label htmlFor={name}>{children}</label>
+      <label htmlFor={id}>{children}</label>
     </div>
   );
 };

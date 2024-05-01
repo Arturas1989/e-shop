@@ -12,12 +12,12 @@ export const ProductsPage = ({ name }: ProductsProps) => {
     collectionName: 'products',
     onlyFeatured: false,
   }
-  const [products, isLoaded] = useData<Product>(dataInfo);
+  const [products, isLoaded, setData] = useData<Product>(dataInfo);
   return (
     <main className="products-page">
       <section className="products-top">
         <ProductsCount productsCount={products?.length} isLoaded={isLoaded} />
-        <Filter />
+        <Filter setData={setData} productData={products}/>
       </section>
       <section>
         <Products products={products} />

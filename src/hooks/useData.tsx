@@ -6,10 +6,15 @@ import type { DataInfo } from '../types';
 import { toast } from 'react-toastify';
 
 
-export const useData = <T extends DocumentData>(dataInfo: DataInfo) => {
 
+export const useData = <T extends DocumentData>(dataInfo: DataInfo) => {
+  type UseData = [
+    T[] | null, 
+    boolean, 
+    React.Dispatch<React.SetStateAction<T[] | null>>
+  ];
   const {collectionName, onlyFeatured} = dataInfo
-  const [colData, setColData] = useState<T[] | null>(null);
+  const [data, setData] = useState<T[] | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -21,10 +26,10 @@ export const useData = <T extends DocumentData>(dataInfo: DataInfo) => {
       getDocs(colRef).then((fireData) => {
         let data = fireData.docs.map((doc) => doc.data() as T);
         if(onlyFeatured) data = data.filter(product => product.isFeatured);
-        setColData(data);
+        setData(data);
         setIsLoaded(true);
       });
     }
   }, [collectionName, onlyFeatured]);
-  return [colData, isLoaded] as [T[] | null, boolean];
+  return [data, isLoaded, setData] as UseData;
 };
