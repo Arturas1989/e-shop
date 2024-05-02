@@ -11,6 +11,11 @@ exports[`Products tests FeaturedProducts component renders correctly 1`] = `
   </h2>
   <div
     data-testid="loading"
+    style={
+      Object {
+        "marginTop": "0",
+      }
+    }
   >
     <img
       alt="spinner"
