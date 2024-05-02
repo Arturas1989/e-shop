@@ -12,19 +12,18 @@ export const checkAuth = (): Auth => {
 export const useLogin = () => {
   const auth = checkAuth();
   const [isLoggedIn, setIsLoggedIn] = useState(auth.currentUser !== null);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     try{
       onAuthStateChanged(auth, (user) => {
-        if (user) {
-          setIsLoggedIn(true);
-        } else {
-          setIsLoggedIn(false);
-        }
+        setIsLoggedIn(!!user);
+        setIsLoading(false);
       });
     } catch {
       return;
     }
   },[auth])
 
-  return isLoggedIn;
+  return [isLoggedIn, isLoading];
 }
