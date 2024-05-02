@@ -7,7 +7,7 @@ import { useLogin } from '../../hooks/useLogin';
 export const Header = () => {
   const [menu, setMenu] = useState({loginMenuVisible: false, searchVisible: false, navigationMenuVisible: false});
   const {loginMenuVisible, searchVisible, navigationMenuVisible} = menu;
-  const isLoggedIn = useLogin();
+  const [isLoggedIn] = useLogin();
   console.log('header renders')
   useEffect(() => {
     const hideSubMenu = (e: MouseEvent) => {
