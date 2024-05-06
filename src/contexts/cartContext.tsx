@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext } from "react";
 import { Cart } from "../services/Cart";
-import { useCartProducts } from "../hooks";
+import { useCart } from "../hooks";
 
 type CartContextProviderProps = {
   children: ReactNode;
@@ -15,7 +15,7 @@ type CartContextValue = {
 const CartContext = createContext<CartContextValue>(null);
 
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
-  const {cart, setCart, isLoading} = useCartProducts()
+  const {cart, setCart, isLoading} = useCart();
   return (
     <CartContext.Provider value={{cart, setCart, isLoading}}>
       {children}
