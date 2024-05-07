@@ -50,6 +50,7 @@ code {
 @import '../pages/PageNotFound/PageNotFound.css';
 @import '../pages/Home/Home.css';
 @import '../pages/Products/ProductsPage.css';
+@import '../pages/Cart/Cart.css';
 @import '../pages/Auth/Auth.css';
 
 
