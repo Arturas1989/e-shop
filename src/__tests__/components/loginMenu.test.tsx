@@ -1,13 +1,16 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Header, SearchBar } from '../../components';
+import { CartContextProvider } from '../../contexts/cartContext';
 
 describe('login menu test', () => {
   test('login menu renders on click', () => {
     render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
+          <Header />
+        </BrowserRouter>
+      </CartContextProvider>
     );
     const accountIcon = screen.getByTestId('account-icon');
     expect(accountIcon).toBeInTheDocument();
@@ -25,9 +28,11 @@ describe('login menu test', () => {
 
   test('login menu disapears on other element click', () => {
     render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
+          <Header />
+        </BrowserRouter>
+      </CartContextProvider>
     );
     const accountIcon = screen.getByTestId('account-icon');
     fireEvent.click(accountIcon);
@@ -42,10 +47,12 @@ describe('login menu test', () => {
 
   test('search bar isn\'t displayed when login menu displayed', () => {
     render(
-      <BrowserRouter>
-        <Header />
-        <SearchBar />
-      </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
+          <Header />
+          <SearchBar />
+        </BrowserRouter>
+      </CartContextProvider>
     );
 
     const header = screen.getByTestId('header');

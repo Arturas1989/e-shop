@@ -5,4 +5,7 @@ export { FormFields } from './FormFields';
 export { Collection } from './db/Collection';
 export { DataInfo } from './db/DataInfo';
 export { Product } from './db/schemes/Product';
+export { DBUser } from './db/schemes/DBUser';
+export { DBCart } from './db/schemes/DBCart';
+export { CartProducts } from './db/schemes/DBCart';
 export { Testimonial } from './db/schemes/Testimonial';

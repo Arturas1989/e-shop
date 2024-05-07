@@ -9,6 +9,7 @@ import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../db/firebase';
 import { toast } from 'react-toastify';
 import { type NavigateFunction } from 'react-router-dom';
+import { DBUser } from '../types';
 
 export class Auth {
   private email;
@@ -67,6 +68,7 @@ export class Auth {
       setDoc(doc(db, 'users', user.uid), {
         name,
         email: this.email,
-      });
+        currentCartId: ''
+      } as DBUser);
   }
 }

@@ -24,7 +24,11 @@ export const useData = <T extends DocumentData>(dataInfo: DataInfo) => {
     } else {
       const colRef = collection(db, collectionName);
       getDocs(colRef).then((fireData) => {
-        let data = fireData.docs.map((doc) => doc.data() as T);
+        let data = fireData.docs.map((doc) => {
+            let docData: unknown = {...doc.data(), id: doc.id as string};
+            return docData as T;
+          }
+        );
         if(onlyFeatured) data = data.filter(product => product.isFeatured);
         setData(data);
         setIsLoaded(true);

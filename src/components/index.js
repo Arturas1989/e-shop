@@ -1,4 +1,5 @@
 export { Header } from './Header/Header';
+export { CartItemsCount } from './Header/CartItemsCount';
 export { NavigationMenu } from './Header/Menu/NavigationMenu/NavigationMenu';
 export { LoginMenu } from './Header/Menu/LoginMenu/LoginMenu';
 export { Hamburger } from './Header/Hamburger/Hamburger';

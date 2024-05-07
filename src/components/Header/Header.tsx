@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/e-shop-logo.png';
 import { useEffect, useState } from 'react';
-import { NavigationMenu, LoginMenu, Hamburger, CloseMenu } from '../../components';
+import { NavigationMenu, LoginMenu, Hamburger, CloseMenu, CartItemsCount } from '../../components';
 import { useLogin } from '../../hooks/useLogin';
 
 export const Header = () => {
@@ -50,9 +50,7 @@ export const Header = () => {
             <i data-testid="search-icon" className="bi bi-search" 
               onClick={() => setMenu((prev) => ({...prev, loginMenuVisible: false, searchVisible: !prev.searchVisible}))}>
             </i>
-            <i className="bi bi-cart-fill">
-              <div className="cart-items">0</div>
-            </i>
+            <CartItemsCount />
             <i data-testid="account-icon" className="bi bi-person-circle" 
               onClick={() => setMenu((prev) => ({...prev, loginMenuVisible: !prev.loginMenuVisible, searchVisible: false}))}>
             </i>
