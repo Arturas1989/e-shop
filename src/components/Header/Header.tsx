@@ -50,7 +50,9 @@ export const Header = () => {
             <i data-testid="search-icon" className="bi bi-search" 
               onClick={() => setMenu((prev) => ({...prev, loginMenuVisible: false, searchVisible: !prev.searchVisible}))}>
             </i>
-            <CartItemsCount />
+            <NavLink to='/cart'>
+              <CartItemsCount />
+            </NavLink>
             <i data-testid="account-icon" className="bi bi-person-circle" 
               onClick={() => setMenu((prev) => ({...prev, loginMenuVisible: !prev.loginMenuVisible, searchVisible: false}))}>
             </i>
