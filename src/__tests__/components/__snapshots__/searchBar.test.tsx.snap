@@ -19,6 +19,7 @@ exports[`test description renders correctly 1`] = `
     />
     <button
       className="secondary-button"
+      onClick={[Function]}
     >
       <i
         className="bi bi-search"

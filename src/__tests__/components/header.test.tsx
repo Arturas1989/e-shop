@@ -2,14 +2,17 @@ import renderer from 'react-test-renderer';
 import { fireEvent, screen, render } from '@testing-library/react';
 import { Header } from '../../components';
 import { BrowserRouter } from 'react-router-dom';
+import { CartContextProvider } from '../../contexts/cartContext';
 
 describe('header components renders', () => {
   test('renders correctly', () => {
     const tree = renderer
       .create(
-        <BrowserRouter>
-          <Header />
-        </BrowserRouter>
+        <CartContextProvider>
+          <BrowserRouter>
+            <Header />
+          </BrowserRouter>
+        </CartContextProvider>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -17,9 +20,11 @@ describe('header components renders', () => {
 
   test('hamburger renders correctly and items on click changes correctly', () => {
     render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
+          <Header />
+        </BrowserRouter>
+      </CartContextProvider>
     );
     const hamburger = screen.getByTestId('hamburger');
     expect(hamburger).toBeInTheDocument();

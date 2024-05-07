@@ -52,6 +52,7 @@ exports[`Login page test render test 1`] = `
       </div>
       <button
         className="secondary-button"
+        onClick={[Function]}
       >
         Login
       </button>

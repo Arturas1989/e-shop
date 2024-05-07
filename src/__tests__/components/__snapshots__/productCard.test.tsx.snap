@@ -54,6 +54,8 @@ exports[`ProductCard components renders renders correctly 1`] = `
       </span>
       <button
         className="secondary-button"
+        id=""
+        onClick={[Function]}
       >
         <span>
           Add to cart
