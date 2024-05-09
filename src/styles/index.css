@@ -43,6 +43,9 @@ code {
 @import '../pages/Home/components/Testimonials/TestimonialCards.css';
 @import '../pages/Home/components/Faq/Faq.css';
 
+/* Cart components */
+@import '../pages/Cart/components/Cartcard/CartCard.css';
+
 /* Product page components */
 @import '../pages/Products/components/Filter/Filter.css';
 

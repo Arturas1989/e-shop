@@ -1,0 +1,38 @@
+.card-container, .left-col{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container{
+  justify-content: space-between;
+  height: 100px;
+  min-width: 100%;
+  border-bottom: var(--navbar-border);
+}
+
+.card-container > * {
+  height: 100%;
+}
+
+.left-col > img{
+  min-width: 130px;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-container{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product-container > p {
+  text-transform: capitalize;
+}
+
+
+.product-container > button{
+  text-align: left;
+  color: rgba(255,0,0,0.6);
+  cursor: pointer;
+}
