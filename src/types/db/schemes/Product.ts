@@ -9,4 +9,5 @@ export type Product = {
   best_seller: boolean;
   img_name: string;
   isFeatured: boolean;
+  quantity?: number;
 };

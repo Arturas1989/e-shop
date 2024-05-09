@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { LoginLink } from './LoginLink';
 import { checkAuth } from '../../../../hooks/useLogin';
-import { type User } from 'firebase/auth';
 
 type LoginMenuProps = {
   isVisible: boolean;

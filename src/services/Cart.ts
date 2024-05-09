@@ -1,7 +1,7 @@
 import { type Auth, getAuth } from "firebase/auth";
-import { Timestamp, addDoc, collection, doc, getDoc, updateDoc } from "firebase/firestore";
+import { Timestamp, addDoc, collection, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from '../db/firebase';
-import { CartProducts, DBCart, DBUser } from "../types";
+import { CartProducts, DBCart, DBUser, Product } from "../types";
 
 export class Cart {
   private auth: Auth;
@@ -14,6 +14,10 @@ export class Cart {
     this.userId = this.auth.currentUser?.uid;
     this.cartId = null;
     this.products = null;
+  }
+
+  getProductsCount(){
+    return this.products ? Object.keys(this.products).length : 0;
   }
 
   makeCopy(){
@@ -29,10 +33,27 @@ export class Cart {
     if(!this.products) await this.setProducts();
   }
 
-  async getProducts(){
-    await this.setProducts();
-    return this.products;
+  async getAllProducts(){
+    if(this.products){
+      const colRef = collection(db, 'products');
+      const products = await getDocs(colRef).then((fireData) => {
+        return fireData.docs.map((doc) => {
+            let docData: unknown = {
+              ...doc.data(), 
+              id: doc.id, 
+              quantity: this.products ? this.products[doc.id] || 0 : 0
+            };
+            return docData as Product;
+          }
+        ).filter(product => product.id in this.products!);
+      })
+      return products
+    }
+    return [];
   }
+
+
+  
 
   async setProducts(){
     await this.setCartId();
