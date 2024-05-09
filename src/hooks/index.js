@@ -3,3 +3,4 @@ export { useFilter } from './useFilter';
 export { useInitialData } from './useInitialData';
 export { useLogin } from './useLogin';
 export { useCart } from './useCart';
+export { useCartProducts } from './useCartProducts';
