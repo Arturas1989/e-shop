@@ -1,4 +1,4 @@
-type Star = '1' | '2' | '3' | '4' | '';
+export type Star = '1' | '2' | '3' | '4' | '';
 
 
 export type FilterFields = {

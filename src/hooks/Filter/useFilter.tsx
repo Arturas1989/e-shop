@@ -1,13 +1,13 @@
 import { useEffect, useMemo } from 'react';
-import { FilterFields, Product } from '../types';
+import { FilterFields, Product } from '../../types';
 
 type useFilterProps = {
   fields: FilterFields;
   products: Product[] | null;
-  setData: React.Dispatch<React.SetStateAction<Product[] | null>>
-}
+  setData: React.Dispatch<React.SetStateAction<Product[] | null>>;
+};
 
-export const useFilter = ({fields, products, setData}: useFilterProps) => {
+export const useFilter = ({ fields, products, setData }: useFilterProps) => {
   const funcMap: {
     [K in keyof FilterFields]: (newData: Product[]) => Product[];
   } = useMemo(() => {
@@ -33,11 +33,14 @@ export const useFilter = ({fields, products, setData}: useFilterProps) => {
     if (products) {
       let newData: Product[] = [...products];
       let field: keyof FilterFields;
+      let filterUrl = window.location.pathname + '?';
       for (field in fields) {
+        filterUrl += `${field}=${fields[field]}&`;
         if (fields[field]) {
           newData = funcMap[field](newData);
         }
       }
+      window.history.pushState(null, '', filterUrl.substring(0, filterUrl.length - 1))
       setData(newData);
     }
   }, [products, setData, fields, funcMap]);

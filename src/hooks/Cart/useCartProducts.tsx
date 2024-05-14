@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Product } from '../types';
-import { Cart } from '../services/Cart';
+import { Product } from '../../types';
+import { Cart } from '../../services/Cart';
 
 type UseCartProducts = [
-  boolean, Product[] | null, React.Dispatch<React.SetStateAction<Product[] | null>>
-]
+  boolean,
+  Product[] | null,
+  React.Dispatch<React.SetStateAction<Product[] | null>>
+];
 
 export const useCartProducts = (cart: Cart | null): UseCartProducts => {
   const [isLoading, setIsLoading] = useState(true);

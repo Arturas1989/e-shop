@@ -1,6 +1,7 @@
 export { useData } from './useData';
-export { useFilter } from './useFilter';
+export { useFilter } from './Filter/useFilter';
 export { useInitialData } from './useInitialData';
 export { useLogin } from './useLogin';
-export { useCart } from './useCart';
-export { useCartProducts } from './useCartProducts';
+export { useCart } from './Cart/useCart';
+export { useCartProducts } from './Cart/useCartProducts';
+export { useFilterParams} from './Filter/useFilterParams';
