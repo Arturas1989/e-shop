@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FilterOpenButton, InputGroup } from '../../components';
 import { useInitialData, useFilter } from '../../../../hooks';
+import { useFilterParams } from '../../../../hooks/Filter/useFilterParams';
 import { type Product, FilterFields } from '../../../../types';
 
 type FilterProps = {
@@ -10,14 +11,10 @@ type FilterProps = {
 
 export const Filter = ({ setData, productData }: FilterProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [fields, setFields] = useState<FilterFields>({
-    price: '',
-    stars: '',
-    best_seller: '',
-    in_stock: '',
-  });
 
+  const { fields, setFields } = useFilterParams();
   const products = useInitialData(productData);
+  
   useFilter({ products, fields, setData });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
