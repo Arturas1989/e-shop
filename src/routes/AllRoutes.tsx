@@ -9,7 +9,7 @@ export const AllRoutes = () => {
       <Route
         path="/products"
         element={
-          <ProtectedRoute redirect="/products">
+          <ProtectedRoute>
             <ProductsPage />
           </ProtectedRoute>
         }
@@ -17,7 +17,7 @@ export const AllRoutes = () => {
       <Route
         path="/cart"
         element={
-          <ProtectedRoute redirect="/cart">
+          <ProtectedRoute>
             <Cart />
           </ProtectedRoute>
         }

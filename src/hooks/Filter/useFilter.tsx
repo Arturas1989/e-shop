@@ -1,13 +1,41 @@
 import { useEffect, useMemo } from 'react';
-import { FilterFields, Product } from '../../types';
+import { FilterFields, Product, Star } from '../../types';
+
+const resetOnInvalid = (fields: FilterFields) => {
+  const validations = {
+    price: (price: string) => ['asc', 'desc'].includes(price),
+    stars: (star: string) => ['1', '2', '3', '4'].includes(star),
+    best_seller: (best_seller: string) => best_seller === 'best_seller',
+    in_stock: (in_stock: string) => in_stock === 'in_stock',
+  };
+
+  let field: keyof FilterFields;
+  for (field in fields) {
+    const isValid = validations[field](fields[field]);
+    if (!isValid) fields[field] = '';
+  }
+};
 
 type useFilterProps = {
-  fields: FilterFields;
+  filterParams: URLSearchParams;
   products: Product[] | null;
   setData: React.Dispatch<React.SetStateAction<Product[] | null>>;
 };
 
-export const useFilter = ({ fields, products, setData }: useFilterProps) => {
+export const useFilter = ({ filterParams, products, setData }: useFilterProps) => {
+  const fields = useMemo(() => {
+    const filterFields: FilterFields = {
+      price: filterParams.get('price') || '',
+      stars: (filterParams.get('stars') || '') as Star,
+      best_seller: filterParams.get('best_seller') || '',
+      in_stock: filterParams.get('in_stock') || '',
+    }
+
+    resetOnInvalid(filterFields);
+
+    return filterFields;
+  }, [filterParams])
+
   const funcMap: {
     [K in keyof FilterFields]: (newData: Product[]) => Product[];
   } = useMemo(() => {
@@ -33,14 +61,11 @@ export const useFilter = ({ fields, products, setData }: useFilterProps) => {
     if (products) {
       let newData: Product[] = [...products];
       let field: keyof FilterFields;
-      let filterUrl = window.location.pathname + '?';
       for (field in fields) {
-        filterUrl += `${field}=${fields[field]}&`;
         if (fields[field]) {
           newData = funcMap[field](newData);
         }
       }
-      window.history.pushState(null, '', filterUrl.substring(0, filterUrl.length - 1))
       setData(newData);
     }
   }, [products, setData, fields, funcMap]);

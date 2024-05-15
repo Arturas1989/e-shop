@@ -1,5 +1,6 @@
 import { HTMLInputTypeAttribute, type ReactNode } from 'react';
 import { FilterFields } from '../../../../types';
+import { type SetURLSearchParams } from 'react-router-dom';
 
 type InputGroupProps = {
   className: string;
@@ -7,13 +8,13 @@ type InputGroupProps = {
   name: keyof FilterFields;
   id: string;
   children: ReactNode;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  fields: FilterFields;
+  setFilterParams: SetURLSearchParams;
+  filterParams: URLSearchParams;
 };
 
 export const InputGroup = ({
-  handleChange,
-  fields,
+  setFilterParams,
+  filterParams,
   className,
   type,
   name,
@@ -21,16 +22,19 @@ export const InputGroup = ({
   children,
 }: InputGroupProps) => {
   return (
-    <div className={className}>
-      <input
-        data-testid={name}
-        onChange={(e) => handleChange(e)}
-        type={type}
-        name={name}
-        id={id}
-        checked={fields[name] === id}
-      />
-      <label htmlFor={id}>{children}</label>
-    </div>
+      <div className={className}>
+        <input
+          data-testid={name}
+          onChange={() => setFilterParams(prev => {
+            prev.set(name, id)
+            return prev
+          })}
+          type={type}
+          name={name}
+          id={id}
+          checked={filterParams.get(name) === id}
+        />
+        <label htmlFor={id}>{children}</label>
+      </div>
   );
 };

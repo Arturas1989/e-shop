@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { FilterOpenButton, InputGroup } from '../../components';
-import { useInitialData, useFilter } from '../../../../hooks';
-import { useFilterParams } from '../../../../hooks/Filter/useFilterParams';
-import { type Product, FilterFields } from '../../../../types';
+import { useInitialData, useFilter, useFilterParams } from '../../../../hooks';
+import { type Product } from '../../../../types';
 
 type FilterProps = {
   setData: React.Dispatch<React.SetStateAction<Product[] | null>>;
@@ -12,21 +11,10 @@ type FilterProps = {
 export const Filter = ({ setData, productData }: FilterProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const { fields, setFields } = useFilterParams();
+  const { filterParams, setFilterParams } = useFilterParams();
   const products = useInitialData(productData);
   
-  useFilter({ products, fields, setData });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFields((prev) => ({
-      ...prev,
-      [e.target.name]:
-        e.target.type === 'checkbox' &&
-        prev[e.target.name as keyof FilterFields]
-          ? ''
-          : e.target.id,
-    }));
-  };
+  useFilter({ products, filterParams, setData });
 
   return (
     <div>
@@ -44,8 +32,8 @@ export const Filter = ({ setData, productData }: FilterProps) => {
           <div className="filter-group">
             <h3>sort by</h3>
             <InputGroup
-              handleChange={handleChange}
-              fields={fields}
+              setFilterParams={setFilterParams}
+              filterParams={filterParams}
               className="input-group"
               type="radio"
               name="price"
@@ -54,8 +42,8 @@ export const Filter = ({ setData, productData }: FilterProps) => {
               Price - Low to High
             </InputGroup>
             <InputGroup
-              handleChange={handleChange}
-              fields={fields}
+              setFilterParams={setFilterParams}
+              filterParams={filterParams}
               className="input-group"
               type="radio"
               name="price"
@@ -67,8 +55,8 @@ export const Filter = ({ setData, productData }: FilterProps) => {
           <div className="filter-group">
             <h3>rating</h3>
             <InputGroup
-              handleChange={handleChange}
-              fields={fields}
+              setFilterParams={setFilterParams}
+              filterParams={filterParams}
               className="input-group"
               type="radio"
               name="stars"
@@ -77,8 +65,8 @@ export const Filter = ({ setData, productData }: FilterProps) => {
               4 Stars & Above
             </InputGroup>
             <InputGroup
-              handleChange={handleChange}
-              fields={fields}
+              setFilterParams={setFilterParams}
+              filterParams={filterParams}
               className="input-group"
               type="radio"
               name="stars"
@@ -87,8 +75,8 @@ export const Filter = ({ setData, productData }: FilterProps) => {
               3 Stars & Above
             </InputGroup>
             <InputGroup
-              handleChange={handleChange}
-              fields={fields}
+              setFilterParams={setFilterParams}
+              filterParams={filterParams}
               className="input-group"
               type="radio"
               name="stars"
@@ -97,8 +85,8 @@ export const Filter = ({ setData, productData }: FilterProps) => {
               2 Stars & Above
             </InputGroup>
             <InputGroup
-              handleChange={handleChange}
-              fields={fields}
+              setFilterParams={setFilterParams}
+              filterParams={filterParams}
               className="input-group"
               type="radio"
               name="stars"
@@ -110,8 +98,8 @@ export const Filter = ({ setData, productData }: FilterProps) => {
           <div className="filter-group">
             <h3>other filters</h3>
             <InputGroup
-              handleChange={handleChange}
-              fields={fields}
+              setFilterParams={setFilterParams}
+              filterParams={filterParams}
               className="input-group"
               type="checkbox"
               name="best_seller"
@@ -120,8 +108,8 @@ export const Filter = ({ setData, productData }: FilterProps) => {
               Best Seller Only
             </InputGroup>
             <InputGroup
-              handleChange={handleChange}
-              fields={fields}
+              setFilterParams={setFilterParams}
+              filterParams={filterParams}
               className="input-group"
               type="checkbox"
               name="in_stock"
@@ -133,7 +121,12 @@ export const Filter = ({ setData, productData }: FilterProps) => {
           <button
             data-testid="clear-filter"
             onClick={() =>
-              setFields({ price: '', stars: '', best_seller: '', in_stock: '' })
+              setFilterParams({
+                price: '',
+                stars: '',
+                best_seller: '',
+                in_stock: '',
+              })
             }
           >
             <span>clear filter</span>
