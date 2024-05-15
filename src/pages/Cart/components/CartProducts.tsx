@@ -11,7 +11,7 @@ type CartProductsProps = {
 export const CartProducts = ({ name }: CartProductsProps) => {
   const { cart } = useCartContext()!;
   const [isLoading, products] = useCartProducts(cart);
-  console.log(products);
+  
   return (
     <section className="cards">
       {isLoading ? (
