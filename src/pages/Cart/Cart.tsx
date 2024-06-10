@@ -1,11 +1,7 @@
 import { Heading } from "../../components";
 import { ProductsCount, CartProducts } from "./components";
 
-type CartProps = {
-  name?: string;
-};
-
-export const Cart = ({ name }: CartProps) => {
+export const Cart = () => {
   return (
     <main className="cart">
       <Heading>My Cart <ProductsCount/></Heading>

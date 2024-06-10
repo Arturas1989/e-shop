@@ -77,7 +77,8 @@ export class Cart {
   async updateCart(productId: string, quantity: number) {
     const cartRef = await this.setProducts();
     if (this.products && cartRef) {
-      this.products[productId] = this.products[productId] + quantity || quantity;
+      this.products[productId] =
+        this.products[productId] + quantity || quantity;
       await updateDoc(cartRef, {
         products: JSON.stringify(this.products),
       });
@@ -152,4 +153,30 @@ export class Cart {
       }
     }
   }
+}
+
+export const addToCart = async (
+  cart: Cart,
+  id: string,
+  quantity: number,
+  setCart: React.Dispatch<React.SetStateAction<Cart | null>>
+) => {
+  const newCart = cart.makeCopy();
+  await newCart.addToCart(id, quantity);
+  setCart(newCart);
+};
+
+export const deleteFromCart = async (
+  productId: string,
+  cart: Cart,
+  setCart: React.Dispatch<React.SetStateAction<Cart | null>>
+) => {
+  const newCart = cart.makeCopy();
+  newCart.deleteDisplayProduct(productId);
+  setCart(newCart);
+  await newCart.deleteCartItem(productId);
+};
+
+export const calcCartTotal = (products: Product[]) => {
+  return products.reduce((acc, product) => acc + product.price * product.quantity!, 0)
 }

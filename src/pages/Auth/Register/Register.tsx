@@ -1,18 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { FormField, Heading, SecondaryButton } from '../../../components';
-import { type FormFields } from '../../../types';
-import { Auth } from '../../../services/Auth';
+import { register } from '../../../services/Auth';
 
 export const Register = () => {
   const navigate = useNavigate();
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target as EventTarget & FormFields;
-    const { name, email, password } = form;
-
-    const auth = new Auth(email.value, password.value, navigate, '/');
-    auth.register(name.value);
-    
+    register(e, navigate);
   };
 
   return (

@@ -1,5 +1,5 @@
 import { useCartContext } from '../../../../contexts/cartContext';
-import { Cart } from '../../../../services/Cart';
+import { deleteFromCart } from '../../../../services/Cart';
 import { Product } from '../../../../types';
 
 type CartCardProps = {
@@ -11,13 +11,7 @@ export const CartCard = ({ product }: CartCardProps) => {
   const {cart, setCart} = useCartContext()!;
 
   const handleDelete = (productId: string) => {
-    const deleteItem = async (cart: Cart, productId: string) => {
-      const newCart = cart.makeCopy();
-      newCart.deleteDisplayProduct(productId);
-      setCart(newCart);
-      await newCart.deleteCartItem(productId);
-    }
-    if(cart) deleteItem(cart, productId);
+    if(cart) deleteFromCart(productId, cart, setCart);
   }
   return (
     <div className="card-container">
