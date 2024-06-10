@@ -11,17 +11,10 @@ export const Question = ({ children }: QuestionProps) => {
     <div className="question">
       <div className="colapsed">
         <p>{children}</p>
-        {isExpanded ? (
-          <ExpandControlIcon
-            className="bi bi-chevron-up"
-            setIsExpanded={setIsExpanded}
-          />
-        ) : (
-          <ExpandControlIcon
-            className="bi bi-chevron-down"
-            setIsExpanded={setIsExpanded}
-          />
-        )}
+        <ExpandControlIcon
+          className={`bi ${isExpanded ? 'bi-chevron-up' : 'bi-chevron-down'}`}
+          setIsExpanded={setIsExpanded}
+        />
       </div>
       {isExpanded && (
         <p data-testid="expanded-answer">

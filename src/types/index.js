@@ -1,4 +1,5 @@
 export { MenuProps } from './MenuProps';
+export { Menu } from './Menu';
 export { FilterFields } from './FilterFields';
 export { Star } from './FilterFields';
 export { RatingNum } from './RatingNum';

@@ -4,12 +4,13 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   type User,
+  signOut,
 } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../db/firebase';
 import { toast } from 'react-toastify';
-import { type NavigateFunction } from 'react-router-dom';
-import { DBUser } from '../types';
+import { type NavigateFunction, Location } from 'react-router-dom';
+import { DBUser, FormFields } from '../types';
 
 export class Auth {
   private email;
@@ -71,4 +72,29 @@ export class Auth {
         currentCartId: ''
       } as DBUser);
   }
+}
+
+export const logout = () => {
+  const auth = getAuth();
+    signOut(auth).then(() => {
+
+    }).catch((error) => {
+      console.log(error);
+    });
+}
+
+export const login = (e: React.FormEvent<HTMLFormElement>, navigate: NavigateFunction, location: Location) => {
+  const form = e.target as EventTarget & Omit<FormFields, 'name'>;
+  const { email, password } = form;
+  const redirect_to = location.state ? location.state : '/';
+  const auth = new Auth(email.value, password.value, navigate, redirect_to);
+  auth.login();
+}
+
+export const register = (e: React.FormEvent<HTMLFormElement>, navigate: NavigateFunction) => {
+  const form = e.target as EventTarget & FormFields;
+    const { name, email, password } = form;
+
+    const auth = new Auth(email.value, password.value, navigate, '/');
+    auth.register(name.value);
 }
