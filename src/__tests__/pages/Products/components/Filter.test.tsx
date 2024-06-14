@@ -1,14 +1,20 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Filter } from '../../../../pages/Products/components';
+import { ProductContextProvider } from '../../../../contexts/productContext';
 
-describe('Filter tests', () => {
-  test('filter open close tests', () => {
-    render(
+const renderFilter = () => {
+  render(
+    <ProductContextProvider>
       <BrowserRouter>
         <Filter/>
       </BrowserRouter>
-    )
+    </ProductContextProvider>
+  )
+}
+describe('Filter tests', () => {
+  test('filter open close tests', () => {
+    renderFilter();
     const filter_open = screen.getByTestId("filter-open");
     fireEvent.click(filter_open);
 
@@ -25,11 +31,7 @@ describe('Filter tests', () => {
   });
 
   test('clear filter on button click', () => {
-    render(
-      <BrowserRouter>
-        <Filter/>
-      </BrowserRouter>
-    )
+    renderFilter();
     const filter_open = screen.getByTestId("filter-open");
     fireEvent.click(filter_open);
 

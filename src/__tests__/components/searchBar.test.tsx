@@ -3,28 +3,26 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Header, SearchBar } from '../../components';
 import { CartContextProvider } from '../../contexts/cartContext';
+import { ProductContextProvider } from '../../contexts/productContext';
+import { renderHeader } from './loginMenu.test';
 
 describe('test description', () => {
   test('renders correctly', () => {
     const tree = renderer
       .create(
         <CartContextProvider>
-          <BrowserRouter>
-            <SearchBar />
-          </BrowserRouter>
+          <ProductContextProvider>
+            <BrowserRouter>
+              <SearchBar />
+            </BrowserRouter>
+          </ProductContextProvider>
         </CartContextProvider>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('search bar visible class changes correctly in the header by clicking header search icon', () => {
-    render(
-      <CartContextProvider>
-        <BrowserRouter>
-          <Header />
-        </BrowserRouter>
-      </CartContextProvider>
-    );
+    renderHeader();
     const header = screen.getByTestId('header');
     expect(header).toBeInTheDocument();
 
@@ -38,13 +36,8 @@ describe('test description', () => {
   });
 
   test('search bar visible class changes correctly in the header by clicking menu search icon', () => {
-    render(
-      <CartContextProvider>
-        <BrowserRouter>
-          <Header />
-        </BrowserRouter>
-      </CartContextProvider>
-    );
+    renderHeader();
+    
     const header = screen.getByTestId('header');
     expect(header).toBeInTheDocument();
 
