@@ -1,26 +1,16 @@
-import { useData } from "../../hooks/useData";
-import { DataInfo, Product } from "../../types";
 import { Filter, ProductsCount } from "./components";
 import { Products } from "../../components";
 
-type ProductsProps = {
-  name?: string;
-};
-
-export const ProductsPage = ({ name }: ProductsProps) => {
-  const dataInfo: DataInfo = {
-    collectionName: 'products',
-    onlyFeatured: false,
-  }
-  const [products, isLoaded, setData] = useData<Product>(dataInfo);
+export const ProductsPage = () => {
+  console.log('products page rendered')
   return (
     <main className="products-page">
       <section className="products-top">
-        <ProductsCount productsCount={products?.length} isLoaded={isLoaded} />
-        <Filter setData={setData} productData={products}/>
+        <ProductsCount />
+        <Filter />
       </section>
       <section>
-        <Products products={products} />
+        <Products/>
       </section>
     </main>
   )
