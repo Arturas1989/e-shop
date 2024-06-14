@@ -1,13 +1,9 @@
-// import { Suspense } from "react";
 import { Loading } from "../../../components";
+import { useProductsContext } from "../../../contexts/productContext";
 
-type ProductsCountProps = {
-  productsCount: number | undefined;
-  isLoaded: boolean;
-};
-
-export const ProductsCount = ({ productsCount, isLoaded }: ProductsCountProps) => {
+export const ProductsCount = () => {
+  const {products, isProductsLoading} = useProductsContext()!
   return (
-      isLoaded ? <h2>All products ({productsCount})</h2> : <Loading />
+    isProductsLoading ? <h2>All products ({products?.length})</h2> : <Loading />
   )
 };
