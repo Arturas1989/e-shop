@@ -1,8 +1,10 @@
 import { useEffect, useMemo } from 'react';
 import { FilterFields, Product, Star } from '../../types';
+import { filterBySearch } from '../../utils/helpers';
 
 const resetOnInvalid = (fields: FilterFields) => {
   const validations = {
+    query: () => true,
     price: (price: string) => ['asc', 'desc'].includes(price),
     stars: (star: string) => ['1', '2', '3', '4'].includes(star),
     best_seller: (best_seller: string) => best_seller === 'best_seller',
@@ -25,6 +27,7 @@ type useFilterProps = {
 export const useFilter = ({ filterParams, products, setData }: useFilterProps) => {
   const fields = useMemo(() => {
     const filterFields: FilterFields = {
+      query: filterParams.get('query') || '',
       price: filterParams.get('price') || '',
       stars: (filterParams.get('stars') || '') as Star,
       best_seller: filterParams.get('best_seller') || '',
@@ -40,6 +43,7 @@ export const useFilter = ({ filterParams, products, setData }: useFilterProps) =
     [K in keyof FilterFields]: (newData: Product[]) => Product[];
   } = useMemo(() => {
     return {
+      query: (newData: Product[]) => filterBySearch(newData, fields.query),
       price: (newData: Product[]) => {
         if (fields.price === 'asc') {
           newData.sort((product1, product2) => product1.price - product2.price);

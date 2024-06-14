@@ -1,17 +1,23 @@
-import type { Product } from '../../types';
+import { useProductsContext } from '../../contexts/productContext';
 import { ProductCard } from '../ProductCard/ProductCard';
 
 type ProductsProps = {
-  products: Product[] | null;
-};
-
-export const Products = ({ products }: ProductsProps) => {
-  return (
-    <div className="products">
-      {products &&
-        products.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
-    </div>
-  );
+  type?: string
+}
+export const Products = ({type}: ProductsProps) => {
+  console.log('product rendered')
+  const { products, featuredProducts } = useProductsContext()!;
+  let productsToDisplay = products
+  if(type === 'featuredProducts'){
+    productsToDisplay = featuredProducts;
+  }
+    return (
+      <div className="products">
+        {productsToDisplay &&
+          productsToDisplay.map((product, index) => (
+            <ProductCard key={index} product={product} />
+          ))}
+      </div>
+    );
+  
 };

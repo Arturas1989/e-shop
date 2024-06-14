@@ -1,19 +1,14 @@
 import { Products } from '../../../../components/Products/Products';
-import { useData } from '../../../../hooks/useData';
-import { DataInfo, Product } from '../../../../types';
 import { Heading, Loading } from '../../../../components';
+import { useProductsContext } from '../../../../contexts/productContext';
 
 export const FeaturedProducts = () => {
-  const dataInfo: DataInfo = {
-    collectionName: 'products',
-    onlyFeatured: true
-  }
-  const [products, isLoaded] = useData<Product>(dataInfo);
+  const {isFeaturedProductsLoading} = useProductsContext()!
 
   return (
     <section className="feature">
       <Heading>Featured products</Heading>
-      {isLoaded ? <Products products={products}/> : <Loading />}
+      {isFeaturedProductsLoading ? <Products type="featuredProducts"/> : <Loading />}
     </section>
   );
 };
