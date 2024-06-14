@@ -1,15 +1,11 @@
 import { useState } from 'react';
 import { FilterOpenButton, InputGroup } from '../../components';
 import { useInitialData, useFilter, useFilterParams } from '../../../../hooks';
-import { type Product } from '../../../../types';
+import { useProductsContext } from '../../../../contexts/productContext';
 
-type FilterProps = {
-  setData: React.Dispatch<React.SetStateAction<Product[] | null>>;
-  productData: Product[] | null;
-};
-
-export const Filter = ({ setData, productData }: FilterProps) => {
+export const Filter = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const {products: productData, setProducts: setData} = useProductsContext()!
 
   const { filterParams, setFilterParams } = useFilterParams();
   const products = useInitialData(productData);
