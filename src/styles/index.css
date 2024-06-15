@@ -26,6 +26,7 @@ code {
 @import '../components/SearchBar/InputBar.css';
 @import '../components/Heading/Heading.css';
 @import '../components/FormField/FormField.css';
+@import '../components/AddCount/AddCount.css';
 
 /* buttons */
 @import '../components/Buttons/PrimaryButton/PrimaryButton.css';

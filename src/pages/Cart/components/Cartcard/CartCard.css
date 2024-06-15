@@ -1,6 +1,11 @@
-.card-container, .left-col{
+.card-container, .left-col, .right-col{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.right-col{
+  gap: 20px
 }
 
 .card-container{

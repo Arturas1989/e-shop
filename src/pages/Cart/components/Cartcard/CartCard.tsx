@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { AddCount } from '../../../../components';
 import { useCartContext } from '../../../../contexts/cartContext';
 import { deleteFromCart } from '../../../../services/Cart';
 import { Product } from '../../../../types';
@@ -7,7 +9,8 @@ type CartCardProps = {
 };
 
 export const CartCard = ({ product }: CartCardProps) => {
-  const { img_name, name, price, id } = product;
+  const { img_name, name, price, id, quantity } = product;
+  const [count, setCount] = useState<number | string>(quantity!);
   const {cart, setCart} = useCartContext()!;
 
   const handleDelete = (productId: string) => {
@@ -22,7 +25,10 @@ export const CartCard = ({ product }: CartCardProps) => {
           <button onClick={() => handleDelete(id)} id={id}>Remove</button>
         </div>
       </div>
-      <p className="right-col">{price}$</p>
+      <div className="right-col">
+        <AddCount id={id} count={count} setCount={setCount} />
+        <p>{quantity!*price}$</p>
+      </div>
     </div>
   );
 };

@@ -6,6 +6,9 @@ export { Hamburger } from './Header/Hamburger/Hamburger';
 export { CloseMenu } from './Header/Menu/NavigationMenu/CloseMenu';
 export { LoginLink } from './Header/Menu/LoginMenu/LoginLink';
 
+export { AddCount } from './AddCount/AddCount'
+export { AddContainer } from './AddCount/AddContainer'
+
 export { SearchBar } from './SearchBar/SearchBar';
 export { InputBar } from './SearchBar/InputBar';
 
