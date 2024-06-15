@@ -14,7 +14,7 @@ export const CartContainer = ({ products }: CartContainerProps) => {
         <CartCard key={product.id} product={product} />
       ))}
       <Total products={products} />
-      <SecondaryButton>
+      <SecondaryButton disabled={true}>
         Place order<i className="bi bi-arrow-right"></i>
       </SecondaryButton>
     </>
