@@ -180,3 +180,13 @@ export const deleteFromCart = async (
 export const calcCartTotal = (products: Product[]) => {
   return products.reduce((acc, product) => acc + product.price * product.quantity!, 0)
 }
+
+export const setProductQuantity = (products: Product[] | null, val: string | number, setProducts: React.Dispatch<React.SetStateAction<Product[] | null>>, id: string) => {
+  if(products){
+    let newProducts = [...products];
+    console.log(newProducts)
+    const index = newProducts.findIndex(product => product.id === id);
+    newProducts[index].quantity = +val;
+    setProducts(newProducts);
+  }
+}
