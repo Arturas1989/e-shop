@@ -1,4 +1,4 @@
-import { SecondaryButton, Rating, BestSeller } from '../../components';
+import {Rating, BestSeller, AddContainer } from '../../components';
 import type { Product } from '../../types';
 
 type ProductCardProps = {
@@ -7,6 +7,7 @@ type ProductCardProps = {
 
 export const ProductCard = ({ product }: ProductCardProps) => {
   const {id, name, description, price, best_seller, rating, img_name} = product;
+  
   return (
     <div className="product-card">
       <BestSeller isBestSeller={best_seller} />
@@ -21,10 +22,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <Rating stars={rating} />
         <div className="price-row">
           <span>${price}</span>
-          <SecondaryButton id={id}>
-            <span>Add to cart</span>
-            <i className="bi bi-plus"></i>
-          </SecondaryButton>
+          <AddContainer id={id}/>
         </div>
       </div>
     </div>
