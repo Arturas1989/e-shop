@@ -52,18 +52,47 @@ exports[`ProductCard components renders renders correctly 1`] = `
         $
         99
       </span>
-      <button
-        className="secondary-button"
-        id=""
-        onClick={[Function]}
+      <div
+        className="add-container"
       >
-        <span>
-          Add to cart
-        </span>
-        <i
-          className="bi bi-plus"
-        />
-      </button>
+        <div
+          className="addCount"
+        >
+          <button
+            className="count-control"
+            onClick={[Function]}
+          >
+            +
+          </button>
+          <input
+            className="addInput"
+            id=""
+            min={1}
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value={1}
+          />
+          <button
+            className="count-control"
+            onClick={[Function]}
+          >
+            -
+          </button>
+        </div>
+        <button
+          className="secondary-button"
+          id=""
+          onClick={[Function]}
+        >
+          <span>
+            Add to cart
+          </span>
+          <i
+            className="bi bi-plus"
+          />
+        </button>
+      </div>
     </div>
   </div>
 </div>
