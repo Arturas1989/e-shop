@@ -32,7 +32,6 @@ export const Header = () => {
             </div>
           </div>
           <div className="right-nav">
-            <i className="bi bi-gear-wide-connected"></i>
             <SearchIcon setMenuOnLocation={setMenuOnLocation!}/>
             <NavLink to='/cart'>
               <CartItemsCount />
