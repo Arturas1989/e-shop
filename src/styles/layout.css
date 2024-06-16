@@ -12,6 +12,16 @@
   margin-top: 0;
 }
 
+.auth-link{
+  text-decoration: underline;
+  color: blue;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 5px;
+  border: 1px solid black;
+}
+
 .App:last-child {
   margin-bottom: var(--app-section-gap);
 }

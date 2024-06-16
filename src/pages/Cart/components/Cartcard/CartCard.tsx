@@ -17,7 +17,7 @@ export const CartCard = ({ product }: CartCardProps) => {
     if(cart) deleteFromCart(productId, cart, setCart);
   }
   return (
-    <div className="card-container">
+    <div className="card-container card">
       <div className="left-col">
         <img src={`/assets/${img_name}`} alt="cart product" />
         <div className="product-container">

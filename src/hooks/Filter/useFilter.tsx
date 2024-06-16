@@ -59,7 +59,7 @@ export const useFilter = ({ filterParams, products, setData }: useFilterProps) =
       in_stock: (newData: Product[]) =>
         newData.filter((product) => product.best_seller),
     };
-  }, [fields.price, fields.stars]);
+  }, [fields.price, fields.stars, fields.query]);
 
   useEffect(() => {
     if (products) {

@@ -67,7 +67,7 @@ export class Cart {
       const cartSnap = await getDoc(cartRef);
       if (cartSnap.exists()) {
         const cartData = cartSnap.data() as DBCart;
-        this.products = JSON.parse(cartData.products);
+        this.products = JSON.parse(cartData.products) || [];
       }
       return cartRef;
     }
@@ -76,7 +76,9 @@ export class Cart {
 
   async updateCart(productId: string, quantity: number) {
     const cartRef = await this.setProducts();
+    console.log('3:', this.products)
     if (this.products && cartRef) {
+      console.log('3:')
       this.products[productId] =
         this.products[productId] + quantity || quantity;
       await updateDoc(cartRef, {
@@ -115,13 +117,13 @@ export class Cart {
 
   async createCart(productId: string, quantity: number) {
     if (this.userId) {
+      this.products = { [productId]: quantity };
       const docRef = await addDoc(collection(db, 'carts'), {
         userId: this.userId,
         products: JSON.stringify(this.products),
         timestamp: Timestamp.fromDate(new Date()),
       } as DBCart);
       this.cartId = docRef.id;
-      this.products = { [productId]: quantity };
       await this.getAllProducts();
     }
   }
@@ -141,9 +143,11 @@ export class Cart {
 
   async addToCart(productId: string, quantity: number) {
     if (this.userId) {
+      console.log('1: ', this.userId)
       const usersRef = doc(db, 'users', this.userId);
       const userSnap = await getDoc(usersRef);
       if (userSnap.exists()) {
+        console.log('2: ', this.cartId)
         const userData = userSnap.data() as DBUser;
         this.cartId = userData.currentCartId;
         this.cartId
@@ -163,6 +167,7 @@ export const addToCart = async (
 ) => {
   const newCart = cart.makeCopy();
   await newCart.addToCart(id, quantity);
+  console.log(newCart)
   setCart(newCart);
 };
 
@@ -182,7 +187,8 @@ export const calcCartTotal = (products: Product[]) => {
 }
 
 export const setProductQuantity = (products: Product[] | null, val: string | number, setProducts: React.Dispatch<React.SetStateAction<Product[] | null>>, id: string) => {
-  if(products){
+  const hasProducts = products && products.length;
+  if(hasProducts){
     let newProducts = [...products];
     console.log(newProducts)
     const index = newProducts.findIndex(product => product.id === id);

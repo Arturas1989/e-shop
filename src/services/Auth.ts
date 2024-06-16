@@ -36,9 +36,8 @@ export class Auth {
         this.navigate(this.redirect_to);
       })
       .catch((error) => {
-        const emailExist =
-          error.message.indexOf('auth/email-already-in-use') !== -1;
-        if (emailExist) toast.error('email already exists');
+        
+        if (error.message) toast.error(error.message);
         console.clear();
       });
   }
@@ -81,6 +80,12 @@ export const logout = () => {
     }).catch((error) => {
       console.log(error);
     });
+}
+
+export const loginAsGuest = (navigate: NavigateFunction, location: Location) => {
+  const redirect_to = location.state ? location.state : '/';
+  const auth = new Auth('guest@guest.com', 'guestguest', navigate, redirect_to);
+  auth.login();
 }
 
 export const login = (e: React.FormEvent<HTMLFormElement>, navigate: NavigateFunction, location: Location) => {

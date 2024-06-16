@@ -26,6 +26,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-end;
+  height: fit-content;
+}
+
+.total-row > span {
+  height: fit-content;
 }
 
 .card-container, .total-row {
