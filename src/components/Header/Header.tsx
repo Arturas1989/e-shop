@@ -8,7 +8,6 @@ export const Header = () => {
   const {menu, setMenuOnLocation} = useHideSubMenu();
   const {loginMenuVisible, searchVisible, navigationMenuVisible} = menu;
   const [isLoggedIn] = useLogin();
-  console.log('header renders')
   return (
     <header data-testid="header" id='header' className={`${!searchVisible ? 'search-not-visible' : ''}`}>
       <div className="navbar-container">

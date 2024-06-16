@@ -76,9 +76,7 @@ export class Cart {
 
   async updateCart(productId: string, quantity: number) {
     const cartRef = await this.setProducts();
-    console.log('3:', this.products)
     if (this.products && cartRef) {
-      console.log('3:')
       this.products[productId] =
         this.products[productId] + quantity || quantity;
       await updateDoc(cartRef, {
@@ -143,11 +141,9 @@ export class Cart {
 
   async addToCart(productId: string, quantity: number) {
     if (this.userId) {
-      console.log('1: ', this.userId)
       const usersRef = doc(db, 'users', this.userId);
       const userSnap = await getDoc(usersRef);
       if (userSnap.exists()) {
-        console.log('2: ', this.cartId)
         const userData = userSnap.data() as DBUser;
         this.cartId = userData.currentCartId;
         this.cartId
@@ -167,7 +163,6 @@ export const addToCart = async (
 ) => {
   const newCart = cart.makeCopy();
   await newCart.addToCart(id, quantity);
-  console.log(newCart)
   setCart(newCart);
 };
 
@@ -190,7 +185,6 @@ export const setProductQuantity = (products: Product[] | null, val: string | num
   const hasProducts = products && products.length;
   if(hasProducts){
     let newProducts = [...products];
-    console.log(newProducts)
     const index = newProducts.findIndex(product => product.id === id);
     newProducts[index].quantity = +val;
     setProducts(newProducts);
