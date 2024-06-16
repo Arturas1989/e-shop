@@ -52,7 +52,7 @@ describe('login menu test', () => {
     expect(header).toBeInTheDocument();
     expect(header).toHaveClass('search-not-visible');
 
-    const searchIcon = screen.getByTestId('search-icon');
+    const searchIcon = screen.getAllByTestId('search-icon')[0];
     expect(searchIcon).toBeInTheDocument();
     fireEvent.click(searchIcon);
 

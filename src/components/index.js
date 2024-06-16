@@ -10,6 +10,7 @@ export { AddCount } from './AddCount/AddCount'
 export { AddContainer } from './AddCount/AddContainer'
 
 export { SearchBar } from './SearchBar/SearchBar';
+export { SearchIcon } from './SearchBar/SearchIcon';
 export { InputBar } from './SearchBar/InputBar';
 
 export { Footer } from './Footer/Footer';

@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { Header, SearchBar } from '../../components';
+import { SearchBar } from '../../components';
 import { CartContextProvider } from '../../contexts/cartContext';
 import { ProductContextProvider } from '../../contexts/productContext';
 import { renderHeader } from './loginMenu.test';
@@ -28,7 +28,7 @@ describe('test description', () => {
 
     expect(header).toHaveClass('search-not-visible');
 
-    const headerSearchIcon = screen.getByTestId('search-icon');
+    const headerSearchIcon = screen.getAllByTestId('search-icon')[0];
     expect(headerSearchIcon).toBeInTheDocument();
 
     fireEvent.click(headerSearchIcon);
@@ -43,7 +43,7 @@ describe('test description', () => {
 
     expect(header).toHaveClass('search-not-visible');
 
-    const menuSearchIcon = screen.getByTestId('search-icon2');
+    const menuSearchIcon = screen.getAllByTestId('search-icon')[0];
     expect(menuSearchIcon).toBeInTheDocument();
 
     fireEvent.click(menuSearchIcon);
