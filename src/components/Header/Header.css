@@ -76,6 +76,10 @@ header * {
   color: rgba(0,0,0,0.6);
 }
 
+.right-nav > i.disabled:hover{
+  cursor: not-allowed;
+}
+
 .bi-cart-fill{
   position: relative;
 }
