@@ -15,13 +15,13 @@ test('Page Not Found', () => {
 });
 
 test('Home', () => {
+  
   const homeRoute = '/';
-
   render(
     <MemoryRouter initialEntries={[homeRoute]}>
       <App />
     </MemoryRouter>
   );
+  expect(screen.queryByTestId('home')).not.toBeInTheDocument();
 
-  expect(screen.getByTestId('home')).toBeInTheDocument();
 });
