@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FormField, Heading, SecondaryButton } from '../../../components';
 import { register } from '../../../services/Auth';
 
@@ -39,6 +39,7 @@ export const Register = () => {
             Your password
           </FormField>
           <SecondaryButton>Register</SecondaryButton>
+          <p className='have-account'>Have an account? <Link className='auth-link' to='/login'>Sign in</Link></p>
         </form>
       </section>
     </main>
