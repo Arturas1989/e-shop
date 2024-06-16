@@ -84,7 +84,7 @@ exports[`header components renders renders correctly 1`] = `
           className="bi bi-gear-wide-connected"
         />
         <i
-          className="bi bi-search"
+          className="bi bi-search "
           data-testid="search-icon"
           onClick={[Function]}
         />
@@ -150,8 +150,8 @@ exports[`header components renders renders correctly 1`] = `
         Login
       </a>
       <i
-        className="bi bi-search"
-        data-testid="search-icon2"
+        className="bi bi-search "
+        data-testid="search-icon"
         onClick={[Function]}
       />
     </nav>
