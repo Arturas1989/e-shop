@@ -9,7 +9,9 @@
 ![Bug Hunter](https://img.shields.io/badge/Bug-Hunter-blueviolet)
 ![Syntax Sorcerer](https://img.shields.io/badge/Syntax-Sorcerer-purple)
 
-# Project overview
+# published at: [e-shop](https://ecompulse.netlify.app/)
+
+## Project overview
 
 This project is a simple e-shop application with the ability to:
 - view and filter products.
@@ -25,10 +27,5 @@ Technology stack: <br/><br/>
 ![Redux](https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white)
 ![Jest](https://img.shields.io/badge/-Jest-C21325?logo=jest&logoColor=white)
 ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=firebase&logoColor=white)
-
-# Contributions are welcomed
-
-### Please read: <br/>
-[Contributions Guidelines](CONTRIBUTIONS.md)
 
 
