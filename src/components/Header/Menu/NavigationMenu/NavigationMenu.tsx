@@ -1,10 +1,11 @@
 import { Link, NavLink } from 'react-router-dom';
 import { MenuProps } from '../../../../types';
-import { LoginLink } from '../LoginMenu/LoginLink';
+import { LoginLink, SearchIcon } from '../../../../components';
 import { useLogin } from '../../../../hooks/useLogin';
 
-export const NavigationMenu = ({isVisible, setMenu}: MenuProps) => {
+export const NavigationMenu = ({isVisible, setMenuOnLocation}: MenuProps) => {
   const isLoggedIn = useLogin();
+  
   return (
     <div data-testid="menu" className={`menu ${isVisible ? 'isVisible' : 'notVisible'}`}>
       <nav>
@@ -13,7 +14,7 @@ export const NavigationMenu = ({isVisible, setMenu}: MenuProps) => {
         <NavLink to="/products">Products</NavLink>
         <LoginLink />
         {!isLoggedIn && <Link to='/register' >Register</Link>}
-        <i data-testid="search-icon2" className="bi bi-search" onClick={() => setMenu!((prev) => ({...prev, searchVisible: !prev.searchVisible}))}></i>
+        <SearchIcon setMenuOnLocation={setMenuOnLocation!}/>
       </nav>
     </div>
   );
