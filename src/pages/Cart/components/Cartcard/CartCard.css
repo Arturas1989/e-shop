@@ -2,26 +2,31 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  gap: 20px
+}
+
+.left-col, .right-col{
+  padding: 5px;
+}
+
+.left-col{
+  min-width: 300px;
 }
 
 .right-col{
-  gap: 20px
+  min-width: 200px;
 }
 
 .card-container{
   justify-content: space-between;
-  height: 100px;
   min-width: 100%;
   border-bottom: var(--navbar-border);
 }
 
-.card-container > * {
-  height: 100%;
-}
-
 .left-col > img{
   min-width: 130px;
-  height: 100%;
+  height: 100px;
   object-fit: contain;
 }
 
@@ -40,4 +45,19 @@
   text-align: left;
   color: rgba(255,0,0,0.6);
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .card-container{
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .product-container, .left-col{
+    min-width: fit-content;
+  }
+  
+  .left-col{
+    gap: 20px
+  }
 }
