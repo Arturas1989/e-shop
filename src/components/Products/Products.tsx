@@ -5,7 +5,6 @@ type ProductsProps = {
   type?: string
 }
 export const Products = ({type}: ProductsProps) => {
-  console.log('product rendered')
   const { products, featuredProducts } = useProductsContext()!;
   let productsToDisplay = products
   if(type === 'featuredProducts'){

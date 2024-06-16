@@ -3,7 +3,6 @@ import { useCartProducts } from "../../hooks";
 import { Loading } from "../Loading/Loading";
 
 export const CartItemsCount = () => {
-  console.log('items count render')
   const {cart} = useCartContext()!;
   const [isLoading, products] = useCartProducts(cart);
   return (

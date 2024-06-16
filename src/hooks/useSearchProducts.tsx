@@ -23,7 +23,6 @@ export const useSearchProducts = () => {
     setDoSearch(false);
   }
   useEffect(() => {
-    console.log(products && featuredProducts)
     const canSearch = searchVal !== '' && products && featuredProducts && doSearch;
     if(canSearch) searchProducts()
     // eslint-disable-next-line

@@ -8,7 +8,6 @@ type SearchIconProps = {
 export const SearchIcon = ({ setMenuOnLocation }: SearchIconProps) => {
   const location = useLocation();
   const className = `bi bi-search ${location.pathname === '/cart' ? 'disabled' : ''}`
-  console.log(className)
   return (
     <i data-testid="search-icon" className={className} onClick={() => setMenuOnLocation!('searchVisible')}></i>
   )

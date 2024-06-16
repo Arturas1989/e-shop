@@ -1,4 +1,3 @@
-import { SecondaryButton } from "../../../components";
 import { Product } from "../../../types";
 import { CartCard } from "./Cartcard/CartCard";
 import { Total } from "./Total";
@@ -14,9 +13,6 @@ export const CartContainer = ({ products }: CartContainerProps) => {
         <CartCard key={product.id} product={product} />
       ))}
       <Total products={products} />
-      <SecondaryButton disabled={true}>
-        Place order<i className="bi bi-arrow-right"></i>
-      </SecondaryButton>
     </>
   );
 };
