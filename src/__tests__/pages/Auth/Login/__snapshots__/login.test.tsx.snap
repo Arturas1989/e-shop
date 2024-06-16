@@ -50,12 +50,37 @@ exports[`Login page test render test 1`] = `
           type="password"
         />
       </div>
-      <button
-        className="secondary-button"
-        onClick={[Function]}
+      <div
+        className="login-buttons"
       >
-        Login
-      </button>
+        <button
+          className="secondary-button"
+          onClick={[Function]}
+        >
+          Login
+        </button>
+        <p>
+          Or
+        </p>
+        <p
+          className="secondary-button"
+          onClick={[Function]}
+        >
+          Login as guest
+        </p>
+      </div>
+      <p
+        className="have-account"
+      >
+        Don't have an account? 
+        <a
+          className="auth-link"
+          href="/register"
+          onClick={[Function]}
+        >
+          Sign up
+        </a>
+      </p>
     </form>
   </section>
 </main>

@@ -73,6 +73,18 @@ exports[`Register page test render test 1`] = `
       >
         Register
       </button>
+      <p
+        className="have-account"
+      >
+        Have an account? 
+        <a
+          className="auth-link"
+          href="/login"
+          onClick={[Function]}
+        >
+          Sign in
+        </a>
+      </p>
     </form>
   </section>
 </main>
