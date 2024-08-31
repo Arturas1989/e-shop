@@ -12,6 +12,11 @@
 
 .left-col{
   min-width: 300px;
+  justify-content: start;
+}
+
+.left-col > img {
+  width: 100px;
 }
 
 .right-col{
